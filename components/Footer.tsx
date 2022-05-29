@@ -4,18 +4,20 @@ const Footer: FC = () => {
   return (
     <>
       <footer>
-        © Insung Mulumba 2021
+        © Insung Mulumba 2022
         <img src="/netliheart.svg" alt="Netlify Logo" className="logo" />
       </footer>
       <style jsx>{`
         footer {
           width: 100%;
-          height: 50px;
+          height: 40px;
           border-top: 1px solid #eaeaea;
           display: flex;
           justify-content: center;
           align-items: center;
           font-size: 12px;
+          position: relative;
+          bottom: 0;
         }
 
         .logo {

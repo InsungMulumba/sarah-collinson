@@ -1,8 +1,8 @@
 import styled, { keyframes } from "styled-components";
-import { useState, FC } from "react";
-import React from "react";
+import { FC } from "react";
+import colors from "../../styles/colors";
 
-const SlideIn = keyframes`
+const fadeIn = keyframes`
     0% {
 
 opacity: 0%;
@@ -14,28 +14,37 @@ opacity: 0%;
 `;
 
 const BulletinText = styled.div`
-  animation: ${SlideIn} 1s ease-out 0s both;
+  animation: ${fadeIn} 1s ease-out 0s both;
+  @media (max-width: 414px) {
+    font-size: 14px;
+  }
 `;
 
-const BulletinBar = styled.div`
+const BulletinBar = styled.a`
   height: 40px;
-  color: black;
+  color: white;
+  width: 100%;
   display: flex;
-  background-color: #2896cc;
-  font-family: Inter, sans-serif;
+  background-color: ${colors.burntOrange};
+  font-family: "Spartan", sans-serif;
   justify-content: center;
   align-items: center;
   /* position: sticky; */
+  @media (max-width: 1280px) {
+    padding: 20px 10px;
+  }
   top: 0;
-  /* @media (max-width: 1280px) {
-    display: none;
-  } */
 `;
 
 const AnnounceBar: FC = () => {
   return (
-    <BulletinBar id="homepage-top">
-      <BulletinText>Click here to book a session.</BulletinText>
+    <BulletinBar
+      href="https://open.spotify.com/show/6RfXRi5ZaYtFcMBTPju8tL"
+      target="_blank"
+    >
+      <BulletinText>
+        Click here to listen to the most recent episode.
+      </BulletinText>
     </BulletinBar>
   );
 };

@@ -5,21 +5,22 @@ import BulletinBar from "./BulletinBar";
 import NavBar from "./NavBar";
 
 type HeaderProps = {
-  isMain?: boolean;
+  showBulletin: boolean;
 };
 
 const HeaderRoot = styled.div`
   display: flex;
   flex-direction: column;
   background-color: white;
-  width: 100vw;
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 `;
 
-const Header: FC<HeaderProps> = () => {
-  // console.log(isMain);
+const Header: FC = () => {
   return (
-    <HeaderRoot>
-      {/* <BulletinBar /> */}
+    <HeaderRoot id="home">
       <NavBar />
     </HeaderRoot>
   );

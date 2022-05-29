@@ -1,13 +1,27 @@
 import styled, { keyframes } from "styled-components";
 import { useState, FC } from "react";
-import React from "react";
-const Root = styled.div``;
+
+const NavigationBarDesktop = styled.div`
+  height: 80px;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  /* background-color: purple; */
+  justify-content: space-between;
+  /* position: sticky;
+  top: 0px; */
+  @media (max-width: 1279px) {
+    height: 80px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+`;
 
 const NavLinksContainerDesktop = styled.div`
   display: flex;
-  justify-content: flex-end;
-  position: relative;
-  @media (max-width: 1280px) {
+  justify-content: space-around;
+  height: 100%;
+  @media (max-width: 1279px) {
     display: none;
   }
 `;
@@ -16,55 +30,39 @@ const NavLinksDesktop = styled.a`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  color: black;
-  margin: 0px 20px;
-  padding: 10px 30px;
-  text-decoration: none;
-
-  font-family: Inter, sans-serif;
+  color: grey;
+  border-radius: 100%;
+  margin: 0px 30px;
+  padding: 25px 30px;
+  width: 150px;
+  font-family: "Spartan", sans-serif;
   font-size: 18px;
+  text-align: center;
   :hover {
-    background-color: #2896cc;
+    border-radius: 0px;
+    background-color: grey;
     color: white;
   }
 `;
 
 const Logo = styled.img`
-  height: 75px;
-  margin: auto 15px;
-  width: 50%;
-  object-fit: contain;
+  height: 100%;
+  margin: auto 20px;
   @media (min-width: 1280px) {
-    height: 50px;
-    width: auto;
+    margin-left: 50px;
   }
 `;
 
-const NavBarWrapperDesktop = styled.div`
-  position: absolute;
-  top: 0px;
-  height: 75px;
-  left: 0px;
+const TagLine = styled.div`
+  /* background-color: purple; */
+  color: black;
   width: 100%;
-  background-color: white;
-  justify-content: space-between;
-  display: none;
-  @media (min-width: 1280px) {
-    display: flex;
-    z-index: 9;
-  }
-`;
-
-const NavBarWrapperMobile = styled.div`
-  width: 100%;
-
   display: flex;
-  justify-content: space-between;
-  @media (min-width: 1280px) {
-    display: none;
-  }
+  justify-content: center;
+  font-family: "Spartan", sans-serif;
+  font-size: 24px;
+  padding: 10px;
 `;
-
 const MenuToggle = styled.button`
   height: 100%;
   background-color: inherit;
@@ -95,41 +93,47 @@ const SlideIn = keyframes`
 
 const SlideInMobileMenu = keyframes`
     0% {
-      height: 0px;
+      left: 100%;
       /* opacity: 0%; */
     }
     100% {
-      height: 25vh;
+      left: 0;
       /* opacity: 100%; */
     }
 `;
 
 const NavLinksContainerMobile = styled.div`
   position: fixed;
-  top: 60px;
+  top: 0;
   left: 0;
   width: 100%;
-  z-index: 90;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${SlideInMobileMenu} 1s ease-out 0s both;
-  background-color: #2896cc;
+  animation: ${SlideInMobileMenu} 0.5s ease-out 0s both;
+  background-color: white;
   justify-content: center;
+  z-index: 9;
 `;
 
 const NavLinksMobile = styled.a`
+  background-color: grey;
   color: white;
   width: 60%;
   justify-content: center;
   display: flex;
   animation: ${SlideIn} 1s ease-out 0s both;
-  height: 75px;
+  height: 100px;
+  @media (max-width: 413px) {
+    height: 60px;
+  }
   align-items: center;
-  text-decoration: none;
+  margin: 20px 0px;
+  border-radius: 500px;
   :hover {
-    background-color: white;
-    color: black;
+    background-color: grey;
+    color: white;
   }
 `;
 
@@ -148,7 +152,7 @@ const BurgerMenuClose = styled.div`
     content: "";
     width: 100%;
     height: 4px;
-    background-color: white;
+    background-color: grey;
   }
   &:before {
     transform: rotate(45deg);
@@ -167,33 +171,37 @@ const NavBar: FC = () => {
         <NavLinksContainerMobile
           onClick={() => setShowBurgerMenu(!toggleBurgerMenu)}
         >
-          {/* <BurgerMenuClose /> */}
-          <NavLinksMobile href="/">Home </NavLinksMobile>
-          <NavLinksMobile href="/booking">Book a session</NavLinksMobile>
-          <NavLinksMobile href="#contact">Contact</NavLinksMobile>
+          <BurgerMenuClose />
+          <NavLinksMobile href="/#home">Home </NavLinksMobile>
+          {/* <NavLinksMobile href="/about">About </NavLinksMobile> */}
+          <NavLinksMobile href="/podcast">Podcast </NavLinksMobile>
+          <NavLinksMobile href="/events">Events</NavLinksMobile>
+          <NavLinksMobile href="/blog">Blog</NavLinksMobile>
+          {/* <NavLinksMobile href="/contact">Contact</NavLinksMobile> */}
         </NavLinksContainerMobile>
       ) : null}
 
-      <Root>
-        <NavBarWrapperMobile>
-          <Logo src="/Logo.png" alt="Rafiki Learning logo" />
-          <MenuToggle onClick={() => setShowBurgerMenu(!toggleBurgerMenu)}>
-            <BurgerMenu />
-            <BurgerMenu />
-            <BurgerMenu />
-          </MenuToggle>
-        </NavBarWrapperMobile>
-        <NavBarWrapperDesktop>
-          <Logo src="/Logo.png" alt="Rafiki Learning logo" />
-          <NavLinksContainerDesktop>
-            <NavLinksDesktop href="/">Home </NavLinksDesktop>
-            {/* <NavLinksDesktop href="/about">About </NavLinksDesktop> */}
+      <NavigationBarDesktop>
+        <MenuToggle onClick={() => setShowBurgerMenu(!toggleBurgerMenu)}>
+          <BurgerMenu />
+          <BurgerMenu />
+          <BurgerMenu />
+        </MenuToggle>
+        <Logo
+          src="/logo.png"
+          alt="Sarah Collinson logo"
+          crossOrigin="anonymous"
+        />
+        <NavLinksContainerDesktop>
+          <NavLinksDesktop href="/#home">Home </NavLinksDesktop>
 
-            <NavLinksDesktop href="/booking">Book a session </NavLinksDesktop>
-            <NavLinksDesktop href="#contact">Contact </NavLinksDesktop>
-          </NavLinksContainerDesktop>
-        </NavBarWrapperDesktop>
-      </Root>
+          <NavLinksDesktop href="/podcast">Podcast </NavLinksDesktop>
+          <NavLinksDesktop href="/events">Events </NavLinksDesktop>
+
+          <NavLinksDesktop href="/blog">Blog </NavLinksDesktop>
+        </NavLinksContainerDesktop>
+      </NavigationBarDesktop>
+      {/* <TagLine> The Grief Gang Podcast</TagLine> */}
     </>
   );
 };

@@ -1,8 +1,19 @@
-import React from 'react'
-import '../styles/globals.css'
+import "../styles/globals.css";
+import PageWithLayoutType from "../types/pageWithLayout";
+import React from "react";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+type AppLayoutProps = {
+  Component: PageWithLayoutType;
+  pageProps: any;
+};
+
+function MyApp({ Component, pageProps }: AppLayoutProps) {
+  const Layout = Component.layout || ((children) => <>{children}</>);
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
-export default MyApp
+export default MyApp;
