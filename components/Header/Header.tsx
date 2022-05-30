@@ -1,12 +1,8 @@
 import React, { FC } from "react";
 import styles from "../../styles/Layout.module.css";
 import styled from "styled-components";
-import BulletinBar from "./BulletinBar";
-import NavBar from "./NavBar";
 
-type HeaderProps = {
-  showBulletin: boolean;
-};
+import NavBar from "./NavBar";
 
 const HeaderRoot = styled.div`
   display: flex;
