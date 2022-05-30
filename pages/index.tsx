@@ -26,7 +26,6 @@ const Root = styled.div`
 const PageContent = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 16px 0px;
   /* margin-bottom: 16px; */
   @media (min-width: 600px) {
     flex-direction: row;

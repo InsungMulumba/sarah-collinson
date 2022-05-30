@@ -38,6 +38,7 @@ const NavLinksDesktop = styled.a`
   font-family: "Spartan", sans-serif;
   font-size: 18px;
   text-align: center;
+  text-decoration: none;
   :hover {
     border-radius: 0px;
     background-color: grey;
@@ -46,7 +47,7 @@ const NavLinksDesktop = styled.a`
 `;
 
 const Logo = styled.img`
-  height: 100%;
+  height: 60%;
   margin: auto 20px;
   @media (min-width: 1280px) {
     margin-left: 50px;
@@ -82,58 +83,52 @@ const BurgerMenu = styled.div`
 
 const SlideIn = keyframes`
     0% {
-      top: -25px;
-      opacity: 0%;
+      height: 0px;
+      /* opacity: 0%; */
     }
     100% {
-      top: 50px;
-      opacity: 100%;
+      height: 15vh;
+      /* opacity: 100%; */
     }
 `;
 
 const SlideInMobileMenu = keyframes`
     0% {
-      left: 100%;
+      height: 0px;
       /* opacity: 0%; */
     }
     100% {
-      left: 0;
+      height: 15vh;
       /* opacity: 100%; */
     }
 `;
 
 const NavLinksContainerMobile = styled.div`
   position: fixed;
-  top: 0;
+  top: 80px;
   left: 0;
   width: 100%;
-  height: 100%;
+  z-index: 90;
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${SlideInMobileMenu} 0.5s ease-out 0s both;
-  background-color: white;
+  animation: ${SlideInMobileMenu} 1s ease-out 0s both;
+  background-color: #2896cc;
   justify-content: center;
-  z-index: 9;
 `;
 
 const NavLinksMobile = styled.a`
-  background-color: grey;
   color: white;
   width: 60%;
   justify-content: center;
   display: flex;
   animation: ${SlideIn} 1s ease-out 0s both;
-  height: 100px;
-  @media (max-width: 413px) {
-    height: 60px;
-  }
+  height: 55px;
   align-items: center;
-  margin: 20px 0px;
-  border-radius: 500px;
+  text-decoration: none;
   :hover {
-    background-color: grey;
-    color: white;
+    background-color: white;
+    color: black;
   }
 `;
 
@@ -171,12 +166,8 @@ const NavBar: FC = () => {
         <NavLinksContainerMobile
           onClick={() => setShowBurgerMenu(!toggleBurgerMenu)}
         >
-          <BurgerMenuClose />
-          <NavLinksMobile href="/#home">Home </NavLinksMobile>
-          {/* <NavLinksMobile href="/about">About </NavLinksMobile> */}
-          <NavLinksMobile href="/podcast">Podcast </NavLinksMobile>
-          <NavLinksMobile href="/events">Events</NavLinksMobile>
-          <NavLinksMobile href="/blog">Blog</NavLinksMobile>
+          <NavLinksMobile href="/">Home </NavLinksMobile>
+          <NavLinksMobile href="/films">Films </NavLinksMobile>
           {/* <NavLinksMobile href="/contact">Contact</NavLinksMobile> */}
         </NavLinksContainerMobile>
       ) : null}
@@ -193,12 +184,8 @@ const NavBar: FC = () => {
           crossOrigin="anonymous"
         />
         <NavLinksContainerDesktop>
-          <NavLinksDesktop href="/#home">Home </NavLinksDesktop>
-
-          <NavLinksDesktop href="/podcast">Podcast </NavLinksDesktop>
-          <NavLinksDesktop href="/events">Events </NavLinksDesktop>
-
-          <NavLinksDesktop href="/blog">Blog </NavLinksDesktop>
+          <NavLinksDesktop href="/">Home </NavLinksDesktop>
+          <NavLinksDesktop href="/films">Films </NavLinksDesktop>
         </NavLinksContainerDesktop>
       </NavigationBarDesktop>
       {/* <TagLine> The Grief Gang Podcast</TagLine> */}
