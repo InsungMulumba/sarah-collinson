@@ -94,7 +94,7 @@ const TextBlock = styled.div`
     margin: 0px 32px;
   }
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   margin: 0px 16px;
 `;
 

@@ -3,10 +3,7 @@ import React, { FC } from "react";
 const Footer: FC = () => {
   return (
     <>
-      <footer>
-        © Insung Mulumba 2022
-        <img src="/netliheart.svg" alt="Netlify Logo" className="logo" />
-      </footer>
+      <footer>© Insung Mulumba 2022</footer>
       <style jsx>{`
         footer {
           width: 100%;
