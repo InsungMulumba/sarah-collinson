@@ -158,7 +158,7 @@ const Home: FC = () => {
                 <PicturesContainer inline>
                   <Image
                     second
-                    src="/home-pic-2.jpg"
+                    src="/home-pic-2.webp"
                     alt="Picture of Sarah"
                     loading="lazy"
                   />
