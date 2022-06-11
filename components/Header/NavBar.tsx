@@ -197,6 +197,8 @@ const NavBar: FC = () => {
             src="/logo.png"
             alt="Sarah Collinson logo"
             crossOrigin="anonymous"
+            loading="eager"
+            priority={true}
           />
           <NameTag>SARAH COLLINSON</NameTag>
         </TagContainer>
