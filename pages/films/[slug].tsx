@@ -27,14 +27,10 @@ const PageContent = styled.div`
   font-family: "Spartan", sans-serif;
 `;
 const PostWrapper: FC<any> = (props) => {
-  const { post, preview } = props;
-
   return (
     <>
       <Header />
-      <Root>
-        <PageContent>{post.blogContent} </PageContent>
-      </Root>
+      <Root>{/* <PageContent>{post.blogContent} </PageContent> */}</Root>
     </>
   );
 };
