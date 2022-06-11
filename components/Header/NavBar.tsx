@@ -30,7 +30,7 @@ const NavLinksDesktop = styled.a`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  color: grey;
+  color: black;
   border-radius: 100%;
   margin: 0px 30px;
   padding: 25px 30px;
@@ -41,7 +41,7 @@ const NavLinksDesktop = styled.a`
   text-decoration: none;
   :hover {
     border-radius: 0px;
-    background-color: grey;
+    background-color: #48cccc;
     color: white;
   }
 `;
@@ -102,6 +102,20 @@ const SlideInMobileMenu = keyframes`
       /* opacity: 100%; */
     }
 `;
+const TagContainer = styled.div`
+  display: flex;
+  height: 100%;
+  display: flex;
+  align-items: center;
+`;
+const NameTag = styled.div`
+  font-family: "Montserrat", sans-serif;
+  font-size: 42px;
+
+  @media (max-width: 1280px) {
+    font-size: 22px;
+  }
+`;
 
 const NavLinksContainerMobile = styled.div`
   position: fixed;
@@ -113,7 +127,7 @@ const NavLinksContainerMobile = styled.div`
   flex-direction: column;
   align-items: center;
   animation: ${SlideInMobileMenu} 1s ease-out 0s both;
-  background-color: #2896cc;
+  background-color: #48cccc;
   justify-content: center;
 `;
 
@@ -178,11 +192,14 @@ const NavBar: FC = () => {
           <BurgerMenu />
           <BurgerMenu />
         </MenuToggle>
-        <Logo
-          src="/logo.png"
-          alt="Sarah Collinson logo"
-          crossOrigin="anonymous"
-        />
+        <TagContainer>
+          <Logo
+            src="/logo.png"
+            alt="Sarah Collinson logo"
+            crossOrigin="anonymous"
+          />
+          <NameTag>SARAH COLLINSON</NameTag>
+        </TagContainer>
         <NavLinksContainerDesktop>
           <NavLinksDesktop href="/">Home </NavLinksDesktop>
           <NavLinksDesktop href="/films">Films </NavLinksDesktop>

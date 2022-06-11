@@ -70,11 +70,16 @@ const fadeIn = keyframes`
 `;
 
 const Image = styled.img`
-  height: 300px;
+  /* height: 300px; */
   width: 100%;
   opacity: 0;
   animation: ${fadeIn} 4s ease-out 0.3s both;
   @media (max-width: 600px) {
+    object-fit: cover;
+  }
+
+  @media (min-width: 600px) {
+    max-height: 600px;
     object-fit: cover;
   }
 `;
@@ -121,27 +126,21 @@ const Home: FC = () => {
           </PicturesContainer>
           <TextContainer>
             <TextBlock>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
-              ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut labore
-              et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-              veniam, quis nostrum exercitationem ullam corporis suscipit
-              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-              vel eum iure reprehenderit qui in ea voluptate velit esse quam
-              nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-              voluptas nulla pariatur?
+              Sarah Collinson is a BAFTA-winning documentary filmmaker and the
+              Executive Producer and Story Editor at Economist Films, the video
+              production arm of the global current-affairs newspaper, The
+              Economist.
+              <br />
+              <br /> Sarah started her career as an undercover reporter, before
+              being selected for Channel 4’s prestigious investigative
+              journalism scheme. She has made current affairs and observational
+              documentaries for Channel 4, ITV and BBC—including a series about
+              school segregation in America which won a Broadcast Award for Best
+              Documentary, an investigation into money laundering in London’s
+              property market and a film following the lives of people in North
+              Korea over the course of a year through their illicit phone calls
+              to defectors in the South. <br />
+              <br />
             </TextBlock>
             <PicturesContainer inline>
               <Image
@@ -152,20 +151,25 @@ const Home: FC = () => {
               />
             </PicturesContainer>
             <TextBlock>
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores et quas molestias excepturi sint occaecati cupiditate non
-              provident, similique sunt in culpa qui officia deserunt mollitia
-              animi, id est laborum et dolorum fuga. Et harum quidem rerum
-              facilis est et expedita distinctio. Nam libero tempore, cum soluta
-              nobis est eligendi optio cumque nihil impedit quo minus id quod
-              maxime placeat facere possimus, omnis voluptas assumenda est,
-              omnis dolor repellendus. Temporibus autem quibusdam et aut
-              officiis debitis aut rerum necessitatibus saepe eveniet ut et
-              voluptates repudiandae sint et molestiae non recusandae. Itaque
-              earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-              voluptatibus maiores alias consequatur aut perferendis doloribus
-              asperiores repellat.
+              She recently won a current affairs BAFTA for her ITV/ Economist
+              documentary “Fearless: the women fighting Putin”—she filmed three
+              brave activists and the risks they took to stand up to the
+              Kremlin. Sarah also played a vital role in getting the documentary
+              off the ground. It was she who pitched the idea to The Economist,
+              delivering the first ever television broadcast film in the paper’s
+              long and illustrious history. Meanwhile, Sarah has overseen rapid
+              and unprecedented growth in the audience for The Economist’s
+              award-winning online documentaries: Economist Films’ YouTube
+              channel has grown to 2.5m subscribers and many films reach an
+              audience of 1m+
+              <br />
+              <br />
+              She was selected as one of Broadcast’s ‘Hot Shots’, Edinburgh TV
+              Festival’s ‘Ones to watch’ and holds an MA in journalism from
+              City, University of London. <br />
+              <br />
+              Sarah is committed to exposing unjust, unfair and unlawful
+              behaviour around the world through powerful personal stories.
             </TextBlock>
           </TextContainer>
         </PageContent>{" "}
