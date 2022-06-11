@@ -43,15 +43,15 @@ const PostWrapper: FC<any> = (props) => {
 
 export default PostWrapper;
 
-export async function getStaticPaths() {
-  const filmPageSlugs = [];
+// export async function getStaticPaths() {
+//   const filmPageSlugs = [];
 
-  const paths = filmPageSlugs.map((slug) => {
-    return { params: { slug } };
-  });
+//   const paths = filmPageSlugs.map((slug) => {
+//     return { params: { slug } };
+//   });
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }

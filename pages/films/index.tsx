@@ -11,6 +11,8 @@ const Root = styled.div`
   justify-content: center;
   flex-direction: column;
   min-height: calc(100vh - 120px);
+
+  font-size: 40px;
 `;
 
 const FilmTile = styled.div`
@@ -25,7 +27,9 @@ const filmsIndex: FC<any> = () => {
   return (
     <>
       <Header />
-      <Root></Root>
+      <Root style={{ alignItems: "center", textAlign: "center" }}>
+        Page under development - coming soon
+      </Root>
     </>
   );
 };
