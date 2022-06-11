@@ -111,15 +111,16 @@ const Home: FC = () => {
         <PageContent>
           <PicturesContainer>
             <Image
-              src="/home-pic-1.jpg"
+              src="/home-pic-1.webp"
               alt="Picture of Sarah"
-              loading="lazy"
+              loading="eager"
+              priority={true}
             />
 
             <SecondImageContainer>
               <Image
                 loading="lazy"
-                src="/home-pic-2.jpg"
+                src="/home-pic-2.webp"
                 alt="Picture of Sarah"
               />
             </SecondImageContainer>
