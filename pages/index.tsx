@@ -5,6 +5,7 @@ import PageWithLayoutType from "../types/pageWithLayout";
 import React, { FC, useState, useEffect } from "react";
 import MainLayout from "../layouts/mainLayout";
 import Header from "../components/Header/Header";
+import SocialMedia from "../components/Home/SocialMediaBar";
 
 interface contentfulDataTypes {
   aboutSlice: string;
@@ -181,8 +182,9 @@ const Home: FC = () => {
                   Sarah is committed to exposing unjust, unfair and unlawful
                   behaviour around the world through powerful personal stories.
                 </TextBlock>
+                <SocialMedia />
               </TextContainer>
-            </PageContent>{" "}
+            </PageContent>
           </>
         )}
       </Root>
