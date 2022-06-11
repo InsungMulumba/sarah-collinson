@@ -43,7 +43,7 @@ const PicturesContainer = styled.div`
     display: ${(props) => (props.inline ? "none" : "flex")};
     align-items: center;
     width: -webkit-fit-content;
-    max-width: 450px;
+    width: 450px;
     margin: 0px 50px;
   }
 
