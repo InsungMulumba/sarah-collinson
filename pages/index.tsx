@@ -2,7 +2,7 @@ import Head from "next/head";
 import styled, { keyframes } from "styled-components";
 import { GetStaticProps } from "next";
 import PageWithLayoutType from "../types/pageWithLayout";
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import MainLayout from "../layouts/mainLayout";
 import Header from "../components/Header/Header";
 
@@ -104,76 +104,87 @@ const TextBlock = styled.div`
 `;
 
 const Home: FC = () => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    // https://github.com/vercel/next.js/discussions/17443
+    setMounted(true);
+  }, []);
+
   return (
     <>
       <Header />
       <Root>
-        <PageContent>
-          <PicturesContainer>
-            <Image
-              src="/home-pic-1.webp"
-              alt="Picture of Sarah"
-              loading="eager"
-              priority={true}
-            />
+        {mounted && (
+          <>
+            <PageContent>
+              <PicturesContainer>
+                <Image
+                  src="/home-pic-1.webp"
+                  alt="Picture of Sarah"
+                  loading="eager"
+                  priority={true}
+                />
 
-            <SecondImageContainer>
-              <Image
-                loading="lazy"
-                src="/home-pic-2.webp"
-                alt="Picture of Sarah"
-              />
-            </SecondImageContainer>
-          </PicturesContainer>
-          <TextContainer>
-            <TextBlock>
-              Sarah Collinson is a BAFTA-winning documentary filmmaker and the
-              Executive Producer and Story Editor at Economist Films, the video
-              production arm of the global current-affairs newspaper, The
-              Economist.
-              <br />
-              <br /> Sarah started her career as an undercover reporter, before
-              being selected for Channel 4’s prestigious investigative
-              journalism scheme. She has made current affairs and observational
-              documentaries for Channel 4, ITV and BBC—including a series about
-              school segregation in America which won a Broadcast Award for Best
-              Documentary, an investigation into money laundering in London’s
-              property market and a film following the lives of people in North
-              Korea over the course of a year through their illicit phone calls
-              to defectors in the South. <br />
-              <br />
-            </TextBlock>
-            <PicturesContainer inline>
-              <Image
-                second
-                src="/home-pic-2.jpg"
-                alt="Picture of Sarah"
-                loading="lazy"
-              />
-            </PicturesContainer>
-            <TextBlock>
-              She recently won a current affairs BAFTA for her ITV/ Economist
-              documentary “Fearless: the women fighting Putin”—she filmed three
-              brave activists and the risks they took to stand up to the
-              Kremlin. Sarah also played a vital role in getting the documentary
-              off the ground. It was she who pitched the idea to The Economist,
-              delivering the first ever television broadcast film in the paper’s
-              long and illustrious history. Meanwhile, Sarah has overseen rapid
-              and unprecedented growth in the audience for The Economist’s
-              award-winning online documentaries: Economist Films’ YouTube
-              channel has grown to 2.5m subscribers and many films reach an
-              audience of 1m+
-              <br />
-              <br />
-              She was selected as one of Broadcast’s ‘Hot Shots’, Edinburgh TV
-              Festival’s ‘Ones to watch’ and holds an MA in journalism from
-              City, University of London. <br />
-              <br />
-              Sarah is committed to exposing unjust, unfair and unlawful
-              behaviour around the world through powerful personal stories.
-            </TextBlock>
-          </TextContainer>
-        </PageContent>{" "}
+                <SecondImageContainer>
+                  <Image
+                    loading="lazy"
+                    src="/home-pic-2.webp"
+                    alt="Picture of Sarah"
+                  />
+                </SecondImageContainer>
+              </PicturesContainer>
+              <TextContainer>
+                <TextBlock>
+                  Sarah Collinson is a BAFTA-winning documentary filmmaker and
+                  the Executive Producer and Story Editor at Economist Films,
+                  the video production arm of the global current-affairs
+                  newspaper, The Economist.
+                  <br />
+                  <br /> Sarah started her career as an undercover reporter,
+                  before being selected for Channel 4’s prestigious
+                  investigative journalism scheme. She has made current affairs
+                  and observational documentaries for Channel 4, ITV and
+                  BBC—including a series about school segregation in America
+                  which won a Broadcast Award for Best Documentary, an
+                  investigation into money laundering in London’s property
+                  market and a film following the lives of people in North Korea
+                  over the course of a year through their illicit phone calls to
+                  defectors in the South. <br />
+                  <br />
+                </TextBlock>
+                <PicturesContainer inline>
+                  <Image
+                    second
+                    src="/home-pic-2.jpg"
+                    alt="Picture of Sarah"
+                    loading="lazy"
+                  />
+                </PicturesContainer>
+                <TextBlock>
+                  She recently won a current affairs BAFTA for her ITV/
+                  Economist documentary “Fearless: the women fighting Putin”—she
+                  filmed three brave activists and the risks they took to stand
+                  up to the Kremlin. Sarah also played a vital role in getting
+                  the documentary off the ground. It was she who pitched the
+                  idea to The Economist, delivering the first ever television
+                  broadcast film in the paper’s long and illustrious history.
+                  Meanwhile, Sarah has overseen rapid and unprecedented growth
+                  in the audience for The Economist’s award-winning online
+                  documentaries: Economist Films’ YouTube channel has grown to
+                  2.5m subscribers and many films reach an audience of 1m+
+                  <br />
+                  <br />
+                  She was selected as one of Broadcast’s ‘Hot Shots’, Edinburgh
+                  TV Festival’s ‘Ones to watch’ and holds an MA in journalism
+                  from City, University of London. <br />
+                  <br />
+                  Sarah is committed to exposing unjust, unfair and unlawful
+                  behaviour around the world through powerful personal stories.
+                </TextBlock>
+              </TextContainer>
+            </PageContent>{" "}
+          </>
+        )}
       </Root>
 
       <style jsx>{`
