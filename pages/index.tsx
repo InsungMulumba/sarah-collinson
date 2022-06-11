@@ -124,6 +124,7 @@ const Home: FC = () => {
                   alt="Picture of Sarah"
                   loading="eager"
                   priority={true}
+                  height="580"
                 />
 
                 <SecondImageContainer>
@@ -131,6 +132,7 @@ const Home: FC = () => {
                     loading="lazy"
                     src="/home-pic-2.webp"
                     alt="Picture of Sarah"
+                    height="450"
                   />
                 </SecondImageContainer>
               </PicturesContainer>

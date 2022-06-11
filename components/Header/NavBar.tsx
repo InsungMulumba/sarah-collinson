@@ -199,6 +199,8 @@ const NavBar: FC = () => {
             crossOrigin="anonymous"
             loading="eager"
             priority={true}
+            height="48"
+            width="48"
           />
           <NameTag>SARAH COLLINSON</NameTag>
         </TagContainer>
