@@ -8,12 +8,12 @@ const NavigationBarDesktop = styled.div`
   display: flex;
   /* background-color: purple; */
   justify-content: space-between;
-  /* position: sticky;
-  top: 0px; */
+
   @media (max-width: 1279px) {
-    height: 80px;
+    height: 100px;
     flex-direction: row-reverse;
     justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
   }
 `;
 
@@ -206,7 +206,9 @@ const NavBar: FC = () => {
         </MenuToggle>
         <TagContainer>
           <NameTag>SARAH COLLINSON</NameTag>
-          <TitleTag>Documentary filmmaker and Exec producer</TitleTag>
+          <TitleTag>
+            Documentary filmmaker and <br /> Exec producer
+          </TitleTag>
         </TagContainer>
         <NavLinksContainerDesktop>
           <NavLinksDesktop href="/">Home </NavLinksDesktop>

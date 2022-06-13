@@ -26,11 +26,12 @@ const Root = styled.div`
 `;
 const PageContent = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   /* margin-bottom: 16px; */
   @media (min-width: 600px) {
     flex-direction: row;
     margin: 32px 64px;
+
     justify-content: center;
   }
 `;
@@ -98,7 +99,7 @@ const TextBlock = styled.div`
   @media (max-width: 600px) {
     flex: 0 0 100%;
     margin: 0px 32px;
-    font-size: 14px;
+    font-size: 16px;
   }
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -180,9 +181,7 @@ const Home: FC = () => {
                   <br />
                   Sarah was selected as one of Broadcast’s ‘Hot Shots’,
                   Edinburgh TV Festival’s ‘Ones to watch’ and holds an MA in
-                  journalism from City, University of London. She is committed
-                  to exposing unjust, unfair and unlawful behaviour around the
-                  world through powerful personal stories.
+                  journalism from City, University of London.
                   <br />
                   <br />
                   Sarah is committed to exposing unjust, unfair and unlawful
