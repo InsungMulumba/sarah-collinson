@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { useState, FC } from "react";
 
 const NavigationBarDesktop = styled.div`
-  height: 80px;
+  height: 120px;
   align-items: center;
   width: 100%;
   display: flex;
@@ -106,14 +106,26 @@ const TagContainer = styled.div`
   display: flex;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
 `;
 const NameTag = styled.div`
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 42px;
-
+  margin: auto 20px;
+  @media (min-width: 1280px) {
+    margin-left: 50px;
+  }
   @media (max-width: 1280px) {
     font-size: 22px;
+  }
+`;
+
+const TitleTag = styled(NameTag)`
+  font-size: 32px;
+  color: grey;
+  @media (max-width: 1280px) {
+    font-size: 16px;
   }
 `;
 
@@ -193,16 +205,8 @@ const NavBar: FC = () => {
           <BurgerMenu />
         </MenuToggle>
         <TagContainer>
-          <Logo
-            src="/logo.png"
-            alt="Sarah Collinson logo"
-            crossOrigin="anonymous"
-            loading="eager"
-            priority={true}
-            height="48"
-            width="48"
-          />
           <NameTag>SARAH COLLINSON</NameTag>
+          <TitleTag>Documentary filmmaker and Exec producer</TitleTag>
         </TagContainer>
         <NavLinksContainerDesktop>
           <NavLinksDesktop href="/">Home </NavLinksDesktop>

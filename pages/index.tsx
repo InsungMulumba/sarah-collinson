@@ -44,7 +44,7 @@ const PicturesContainer = styled.div`
     display: ${(props) => (props.inline ? "none" : "flex")};
     align-items: center;
     width: -webkit-fit-content;
-    width: 450px;
+    width: 350px;
     margin: 0px 50px;
   }
 
@@ -80,7 +80,7 @@ const Image = styled.img`
   }
 
   @media (min-width: 600px) {
-    max-height: 600px;
+    max-height: 400px;
     object-fit: cover;
   }
 `;
@@ -88,7 +88,7 @@ const Image = styled.img`
 const TextContainer = styled.div`
   margin: 16px 0px;
   @media (min-width: 600px) {
-    width: 50%;
+    width: 30%;
     margin: 0px;
   }
 `;
@@ -98,9 +98,10 @@ const TextBlock = styled.div`
   @media (max-width: 600px) {
     flex: 0 0 100%;
     margin: 0px 32px;
+    font-size: 14px;
   }
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
   margin: 0px 16px;
 `;
 
@@ -120,11 +121,11 @@ const Home: FC = () => {
             <PageContent>
               <PicturesContainer>
                 <Image
-                  src="/home-pic-1.webp"
+                  src="/home-pic.webp"
                   alt="Picture of Sarah"
                   loading="eager"
                   priority={true}
-                  height="580"
+                  height="400"
                 />
 
                 <SecondImageContainer>
@@ -132,7 +133,8 @@ const Home: FC = () => {
                     loading="lazy"
                     src="/home-pic-2.webp"
                     alt="Picture of Sarah"
-                    height="450"
+                    height="350"
+                    width="350"
                   />
                 </SecondImageContainer>
               </PicturesContainer>
@@ -147,12 +149,13 @@ const Home: FC = () => {
                   before being selected for Channel 4’s prestigious
                   investigative journalism scheme. She has made current affairs
                   and observational documentaries for Channel 4, ITV and
-                  BBC—including a series about school segregation in America
-                  which won a Broadcast Award for Best Documentary, an
+                  BBC—including producing a series about school segregation in
+                  America which won a Broadcast Award for Best Documentary, an
                   investigation into money laundering in London’s property
                   market and a film following the lives of people in North Korea
                   over the course of a year through their illicit phone calls to
-                  defectors in the South. <br />
+                  defectors in the South
+                  <br />
                   <br />
                 </TextBlock>
                 <PicturesContainer inline>
@@ -164,22 +167,23 @@ const Home: FC = () => {
                   />
                 </PicturesContainer>
                 <TextBlock>
-                  She recently won a current affairs BAFTA for her ITV/
+                  Sarah recently won a current affairs BAFTA for her ITV/
                   Economist documentary “Fearless: the women fighting Putin”—she
-                  filmed three brave activists and the risks they took to stand
-                  up to the Kremlin. Sarah also played a vital role in getting
-                  the documentary off the ground. It was she who pitched the
-                  idea to The Economist, delivering the first ever television
-                  broadcast film in the paper’s long and illustrious history.
-                  Meanwhile, Sarah has overseen rapid and unprecedented growth
-                  in the audience for The Economist’s award-winning online
-                  documentaries: Economist Films’ YouTube channel has grown to
-                  2.5m subscribers and many films reach an audience of 1m+
+                  filmed three brave activists, revealing the risks they took to
+                  stand up to the Kremlin. She pitched the original idea to The
+                  Economist and delivered the first ever television broadcast
+                  film in the paper’s long history. She has overseen rapid and
+                  unprecedented growth in the audience for The Economist’s
+                  award-winning online documentaries: Economist Films’ YouTube
+                  channel has grown to 2.5m subscribers and many films reach an
+                  audience of 1m+.
                   <br />
+                  Sarah was selected as one of Broadcast’s ‘Hot Shots’,
+                  Edinburgh TV Festival’s ‘Ones to watch’ and holds an MA in
+                  journalism from City, University of London. She is committed
+                  to exposing unjust, unfair and unlawful behaviour around the
+                  world through powerful personal stories.
                   <br />
-                  She was selected as one of Broadcast’s ‘Hot Shots’, Edinburgh
-                  TV Festival’s ‘Ones to watch’ and holds an MA in journalism
-                  from City, University of London. <br />
                   <br />
                   Sarah is committed to exposing unjust, unfair and unlawful
                   behaviour around the world through powerful personal stories.
