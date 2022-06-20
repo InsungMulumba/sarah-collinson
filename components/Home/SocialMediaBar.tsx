@@ -18,8 +18,8 @@ const SocialMediaIconLink = styled.a`
 
 const SocialMediaIcon = styled.img`
   @media (min-width: 1280px) {
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
   }
   margin: 0px 5px;
 
@@ -44,8 +44,8 @@ const SMContainer: FC = () => {
               src={`/social-media-icons/${i}.png`}
               alt={`${i} Icon`}
               loading="lazy"
-              height="40"
-              width="40"
+              height="25"
+              width="25"
             />
           </SocialMediaIconLink>
         );

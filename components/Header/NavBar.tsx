@@ -2,13 +2,13 @@ import styled, { keyframes } from "styled-components";
 import { useState, FC } from "react";
 
 const NavigationBarDesktop = styled.div`
-  height: 120px;
+  height: fit-content;
   align-items: center;
   width: 100%;
   display: flex;
   /* background-color: purple; */
   justify-content: space-between;
-
+  margin-top: 32px;
   @media (max-width: 1279px) {
     height: 100px;
     flex-direction: row-reverse;
@@ -111,7 +111,7 @@ const TagContainer = styled.div`
 `;
 const NameTag = styled.div`
   font-family: "Roboto", sans-serif;
-  font-size: 42px;
+  font-size: 50px;
   margin: auto 20px;
   @media (min-width: 1280px) {
     margin-left: 50px;
@@ -122,7 +122,7 @@ const NameTag = styled.div`
 `;
 
 const TitleTag = styled(NameTag)`
-  font-size: 32px;
+  font-size: 24px;
   color: grey;
   @media (max-width: 1280px) {
     font-size: 16px;
@@ -207,7 +207,7 @@ const NavBar: FC = () => {
         <TagContainer>
           <NameTag>SARAH COLLINSON</NameTag>
           <TitleTag>
-            Documentary filmmaker and <br /> Exec producer
+            Documentary filmmaker and <br /> Executive producer
           </TitleTag>
         </TagContainer>
         <NavLinksContainerDesktop>

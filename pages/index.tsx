@@ -26,7 +26,7 @@ const Root = styled.div`
 `;
 const PageContent = styled.div`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   /* margin-bottom: 16px; */
   @media (min-width: 600px) {
     flex-direction: row;
@@ -122,7 +122,7 @@ const Home: FC = () => {
             <PageContent>
               <PicturesContainer>
                 <Image
-                  src="/home-pic.webp"
+                  src="/home-pic-2.webp"
                   alt="Picture of Sarah"
                   loading="eager"
                   priority={true}
@@ -132,7 +132,7 @@ const Home: FC = () => {
                 <SecondImageContainer>
                   <Image
                     loading="lazy"
-                    src="/home-pic-2.webp"
+                    src="/home-pic.webp"
                     alt="Picture of Sarah"
                     height="350"
                     width="350"
@@ -148,44 +148,47 @@ const Home: FC = () => {
                   <br />
                   <br /> Sarah started her career as an undercover reporter,
                   before being selected for Channel 4’s prestigious
-                  investigative journalism scheme. She has made current affairs
-                  and observational documentaries for Channel 4, ITV and
-                  BBC—including producing a series about school segregation in
-                  America which won a Broadcast Award for Best Documentary, an
-                  investigation into money laundering in London’s property
-                  market and a film following the lives of people in North Korea
-                  over the course of a year through their illicit phone calls to
-                  defectors in the South
+                  investigative journalism scheme. She has since made current
+                  affairs and observational documentaries for Channel 4, ITV and
+                  BBC—including series producing six episodes on school
+                  segregation in America which won a Broadcast Award for Best
+                  Documentary, an investigation into money laundering in
+                  London’s property market and a film following the lives of
+                  people in North Korea over the course of a year through their
+                  illicit phone calls to defectors in the South.
                   <br />
                   <br />
                 </TextBlock>
                 <PicturesContainer inline>
                   <Image
                     second
-                    src="/home-pic-2.webp"
+                    src="/home-pic.webp"
                     alt="Picture of Sarah"
                     loading="lazy"
                   />
                 </PicturesContainer>
                 <TextBlock>
-                  Sarah recently won a current affairs BAFTA for her ITV/
+                  Sarah won the 2022 current affairs BAFTA for her ITV/
                   Economist documentary “Fearless: the women fighting Putin”—she
                   filmed three brave activists, revealing the risks they took to
                   stand up to the Kremlin. She pitched the original idea to The
                   Economist and delivered the first ever television broadcast
-                  film in the paper’s long history. She has overseen rapid and
-                  unprecedented growth in the audience for The Economist’s
-                  award-winning online documentaries: Economist Films’ YouTube
-                  channel has grown to 2.5m subscribers and many films reach an
-                  audience of 1m+.
+                  film in the paper’s long history.
+                  <br />
+                  <br />
+                  She has simultaneously overseen rapid and unprecedented growth
+                  in the audience for The Economist’s award-winning online
+                  documentaries: Economist Films’ YouTube channel has grown to
+                  2.5m subscribers and many films reach an audience of 1m+.
+                  <br />
                   <br />
                   Sarah was selected as one of Broadcast’s ‘Hot Shots’,
                   Edinburgh TV Festival’s ‘Ones to watch’ and holds an MA in
                   journalism from City, University of London.
-                  <br />
-                  <br />
-                  Sarah is committed to exposing unjust, unfair and unlawful
-                  behaviour around the world through powerful personal stories.
+                  <br /> <br />
+                  She is committed to exposing unjust, unfair and unlawful
+                  behaviour around the world through powerful personal stories,
+                  intimately told.
                 </TextBlock>
                 <SocialMedia />
               </TextContainer>
