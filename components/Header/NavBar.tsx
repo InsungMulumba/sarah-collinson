@@ -35,7 +35,7 @@ const NavLinksDesktop = styled.a`
   margin: 0px 30px;
   padding: 25px 30px;
   width: 150px;
-  font-family: "Spartan", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   text-align: center;
   text-decoration: none;
