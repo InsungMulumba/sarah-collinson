@@ -61,7 +61,11 @@ const FilmName = styled.div`
   font-family: "Roboto", sans-serif;
   display: flex;
   text-align: center;
-  font-size: 44px;
+
+  font-size: 24px;
+  @media (min-width: 1280px) {
+    font-size: 44px;
+  }
   background-color: rgba(0, 0, 0, 0.4);
   visibility: hidden;
   width: 100%;
