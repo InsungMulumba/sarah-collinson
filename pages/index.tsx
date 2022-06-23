@@ -81,7 +81,6 @@ const Image = styled.img`
   }
 
   @media (min-width: 600px) {
-    max-height: 400px;
     object-fit: cover;
   }
 `;
@@ -126,7 +125,7 @@ const Home: FC = () => {
                   alt="Picture of Sarah"
                   loading="eager"
                   priority={true}
-                  height="400"
+                  height="450"
                 />
 
                 <SecondImageContainer>
@@ -134,7 +133,7 @@ const Home: FC = () => {
                     loading="lazy"
                     src="/home-pic.webp"
                     alt="Picture of Sarah"
-                    height="350"
+                    height="450"
                     width="350"
                   />
                 </SecondImageContainer>
@@ -150,7 +149,7 @@ const Home: FC = () => {
                   before being selected for Channel 4’s prestigious
                   investigative journalism scheme. She has since made current
                   affairs and observational documentaries for Channel 4, ITV and
-                  BBC—including series producing six episodes on school
+                  BBC—including producing a six-part series on school
                   segregation in America which won a Broadcast Award for Best
                   Documentary, an investigation into money laundering in
                   London’s property market and a film following the lives of

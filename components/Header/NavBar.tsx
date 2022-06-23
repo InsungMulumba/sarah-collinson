@@ -10,7 +10,6 @@ const NavigationBarDesktop = styled.div`
   justify-content: space-between;
   margin-top: 32px;
   @media (max-width: 1279px) {
-    height: 100px;
     flex-direction: row-reverse;
     justify-content: space-between;
     border-bottom: 1px solid lightgrey;
@@ -54,20 +53,12 @@ const Logo = styled.img`
   }
 `;
 
-const TagLine = styled.div`
-  /* background-color: purple; */
-  color: black;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-family: "Spartan", sans-serif;
-  font-size: 24px;
-  padding: 10px;
-`;
 const MenuToggle = styled.button`
   height: 100%;
   background-color: inherit;
   margin: auto 10px;
+  margin-top: 0px;
+
   @media (min-width: 1280px) {
     display: none;
   }
@@ -108,22 +99,28 @@ const TagContainer = styled.div`
   display: flex;
   align-items: start;
   flex-direction: column;
+  padding-bottom: 24px;
 `;
 const NameTag = styled.div`
   font-family: "Roboto", sans-serif;
   font-size: 50px;
+  text-decoration: underline;
+  text-decoration-color: #46cdcf;
+  text-underline-offset: 5px;
   margin: auto 20px;
   @media (min-width: 1280px) {
     margin-left: 50px;
   }
   @media (max-width: 1280px) {
-    font-size: 22px;
+    font-size: 32px;
   }
 `;
 
 const TitleTag = styled(NameTag)`
   font-size: 24px;
   color: grey;
+  text-decoration: none;
+  margin-top: 16px;
   @media (max-width: 1280px) {
     font-size: 16px;
   }
