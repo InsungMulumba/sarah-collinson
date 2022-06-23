@@ -30,7 +30,10 @@ const SocialMediaIcon = styled.img`
 
 const platforms = ["gmail", "Twitter"];
 
-const platformLinks = ["sfcollinson@gmail.com", "www.twitter.com/sfcollinson"];
+const platformLinks = [
+  "mailto:sfcollinson@gmail.com",
+  "https://twitter.com/sfcollinson",
+];
 
 const SMContainer: FC = () => {
   return (

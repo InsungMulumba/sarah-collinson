@@ -29,7 +29,7 @@ const FilmTile = styled.div<{
   picture: string;
 }>`
   flex: 0 0 100%; /* don't grow, don't shrink, width */
-  height: 25vh;
+  height: 28vh;
   @media (min-width: 600px) {
     flex: 0 0 100%; /* don't grow, don't shrink, width */
     height: 40vh;
@@ -37,7 +37,11 @@ const FilmTile = styled.div<{
 
   @media (min-width: 1280px) {
     flex: 0.33 0 33%; /* don't grow, don't shrink, width */
-    height: 330px;
+    /* max-height: 400px;
+    height: 400px;
+    min-height: 400px; */
+
+    height: 45vh;
   }
 
   background: url(${(props) => props.picture}) no-repeat;
@@ -45,6 +49,7 @@ const FilmTile = styled.div<{
   background-position: center;
   @media (min-width: 600px) {
     background-size: cover;
+    background-position: center;
   }
 
   color: black;
