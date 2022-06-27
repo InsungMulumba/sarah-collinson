@@ -104,9 +104,8 @@ const TagContainer = styled.div`
 const NameTag = styled.div`
   font-family: "Roboto", sans-serif;
   font-size: 50px;
-  text-decoration: underline;
-  text-decoration-color: #46cdcf;
-  text-underline-offset: 5px;
+  text-decoration: none;
+
   margin: auto 20px;
   @media (min-width: 1280px) {
     margin-left: 50px;

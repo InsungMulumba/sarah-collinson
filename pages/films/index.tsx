@@ -121,17 +121,17 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
       image: "/films/life-inside-secret-state.webp",
     },
     {
-      title: "China’s Pop Idols",
+      title: "China’s pop idols",
       url: "https://www.youtube.com/watch?v=14BbagW3lbA",
       image: "/films/chinas-pop-idols.webp",
     },
     {
-      title: "American High school",
+      title: "American high school",
       url: "https://www.youtube.com/watch?v=14BbagW3lbA",
       image: "/films/american-high-school.webp",
     },
     {
-      title: "From Russia with Cash",
+      title: "From Russia with cash",
       url: "https://www.netflix.com/title/81574288",
       image: "/films/from-russia-with-cash.webp",
     },
