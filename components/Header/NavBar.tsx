@@ -113,6 +113,9 @@ const NameTag = styled.div`
   @media (max-width: 1280px) {
     font-size: 32px;
   }
+  @media (max-width: 400px) {
+    font-size: 24px;
+  }
 `;
 
 const TitleTag = styled(NameTag)`
