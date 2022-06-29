@@ -62,6 +62,13 @@ const MenuToggle = styled.button`
   @media (min-width: 1280px) {
     display: none;
   }
+
+  @media (max-width: 400px) {
+    margin: 0px;
+    height: fit-content;
+    align-self: baseline;
+    margin-top: 3px;
+  }
   border: none;
 `;
 
@@ -70,6 +77,10 @@ const BurgerMenu = styled.div`
   height: 2px;
   background-color: black;
   margin: 6px;
+
+  @media (max-width: 1280px) {
+    width: 25px;
+  }
 `;
 
 const SlideIn = keyframes`
@@ -112,9 +123,6 @@ const NameTag = styled.div`
   }
   @media (max-width: 1280px) {
     font-size: 32px;
-  }
-  @media (max-width: 400px) {
-    font-size: 24px;
   }
 `;
 
