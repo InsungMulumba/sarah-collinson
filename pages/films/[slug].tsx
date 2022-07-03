@@ -4,6 +4,7 @@ import MainLayout from "../../layouts/mainLayout";
 import styled from "styled-components";
 import PageWithLayoutType from "../../types/pageWithLayout";
 import Header from "../../components/Header/Header";
+import { getAllFilmPageSlugs, getPostBySlug } from "../../utils/contentfulApi";
 
 const Root = styled.div`
   width: 100vw;
@@ -30,7 +31,7 @@ const PostWrapper: FC<any> = (props) => {
   return (
     <>
       <Header />
-      <Root>{/* <PageContent>{post.blogContent} </PageContent> */}</Root>
+      <Root>{console.log(props.filmData)}</Root>
     </>
   );
 };
@@ -38,6 +39,40 @@ const PostWrapper: FC<any> = (props) => {
 (PostWrapper as PageWithLayoutType).layout = MainLayout;
 
 export default PostWrapper;
+
+export async function getStaticPaths() {
+  const filmPageSlugs = await getAllFilmPageSlugs();
+
+  const paths = filmPageSlugs.map((slug) => {
+    return { params: { slug } };
+  });
+  // console.log(paths);
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params, preview = false }) {
+  console.log(params.slug);
+  const filmData = await getPostBySlug(params.slug, {
+    preview: preview,
+  });
+
+  if (!filmData) {
+    console.log("not a film");
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      preview,
+      filmData,
+    },
+  };
+}
 
 // export async function getStaticPaths() {
 //   const filmPageSlugs = [];
