@@ -10,6 +10,7 @@ type filmsCollection = {
   title: String;
   url: String;
   image: String;
+  slug: String;
 }[];
 
 const Root = styled.div`
@@ -71,7 +72,7 @@ const FilmName = styled.div`
   @media (min-width: 1280px) {
     font-size: 44px;
   }
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
   visibility: hidden;
   width: 100%;
   height: 100%;
@@ -114,46 +115,55 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
       title: "Fearless: The women fighting Putin",
       url: "https://vimeo.com/646064087",
       image: "/films/the-women-fighting-putin.webp",
+      slug: "fearless-women-fighting-putin",
     },
     {
       title: "North Korea: Life inside the secret state",
       url: "https://www.youtube.com/watch?v=en6NMBEDj1c",
       image: "/films/life-inside-secret-state.webp",
+      slug: "life-inside-secret-state",
     },
     {
       title: "China’s pop idols",
       url: "https://www.youtube.com/watch?v=14BbagW3lbA",
       image: "/films/chinas-pop-idols.webp",
+      slug: "chinas-pop-idols",
     },
     {
       title: "American high school",
       url: "https://www.youtube.com/watch?v=14BbagW3lbA",
       image: "/films/american-high-school.webp",
+      slug: "american-high-school",
     },
     {
       title: "From Russia with cash",
       url: "https://www.netflix.com/title/81574288",
       image: "/films/from-russia-with-cash.webp",
+      slug: "from-russia-with-cash",
     },
     {
       title: "America’s legacy of lynching",
       url: "https://www.youtube.com/watch?v=mYYDgYWc3lE",
       image: "/films/america-lynching.webp",
+      slug: "americas-legacy-of-lynching",
     },
     {
       title: "Joe Biden wins: what next for America? Q&A",
       url: "https://www.youtube.com/watch?v=XdD0HT4X_s4",
       image: "/films/biden-next.webp",
+      slug: "whats-next-for-america",
     },
     {
       title: "Vaping: what people are getting wrong",
       url: "https://www.youtube.com/watch?v=O4_l-klxqCQ&t=9s",
       image: "/films/vaping-wrong.webp",
+      slug: "vaping-what-people-are-getting-wrong",
     },
     {
       title: "How America politicised abortion",
       url: "https://www.youtube.com/watch?v=jerdBX3JeOk&t=101s",
       image: "/films/abortion-america.webp",
+      slug: "how-america-politicised-abortion",
     },
   ];
 
