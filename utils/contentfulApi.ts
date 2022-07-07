@@ -180,6 +180,7 @@ export async function getAllFilmPageSlugs() {
           items {
             filmSlug
             filmUrl
+            filmTitle
             filmMainPicture {
               sys {
                 id
@@ -258,6 +259,7 @@ export async function getPostBySlug(slug, options = defaultOptions) {
         }
         filmSlug
         filmUrl
+        filmTitle
         filmBlurb {    
             json
             links {
@@ -269,6 +271,7 @@ export async function getPostBySlug(slug, options = defaultOptions) {
                   __typename
                   ... on FilmPage {
                     filmUrl
+                    filmTitle
                     filmSlug
                   }
                 }

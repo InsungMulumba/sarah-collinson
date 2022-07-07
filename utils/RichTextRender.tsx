@@ -41,6 +41,20 @@ function renderOptions(links) {
 
   return {
     // other options...
+    renderText: (text) => {
+      return text.split("\n").reduce((children, textSegment, index) => {
+        return [
+          ...children,
+          index > 0 && (
+            <>
+              <br key={index} />
+              {/* <br key={index} /> */}
+            </>
+          ),
+          textSegment,
+        ];
+      }, []);
+    },
 
     renderNode: {
       // other options...

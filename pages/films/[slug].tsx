@@ -5,14 +5,29 @@ import styled from "styled-components";
 import PageWithLayoutType from "../../types/pageWithLayout";
 import Header from "../../components/Header/Header";
 import { getAllFilmPageSlugs, getPostBySlug } from "../../utils/contentfulApi";
+import { renderPost } from "../../utils/RichTextRender";
 
 const Root = styled.div`
   width: 100vw;
 
   min-height: calc(100vh - 120px);
+  padding: 0px 64px;
 
   @media (min-width: 1280px) {
   }
+`;
+
+const FilmTitle = styled.h1`
+  font-size: 24px;
+  @media (min-width: 600px) {
+    font-size: 38px;
+  }
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  text-align: center;
+`;
+const FilmVideo = styled.div`
+  width: 100%;
 `;
 
 const PageContent = styled.div`
@@ -25,13 +40,27 @@ const PageContent = styled.div`
     margin: 0px;
     line-height: 24px;
   }
-  font-family: "Spartan", sans-serif;
 `;
 const PostWrapper: FC<any> = (props) => {
+  const { filmTitle, filmSlug, filmBlurb, filmUrl } = props.filmData;
   return (
     <>
       <Header />
-      <Root>{console.log(props.filmData)}</Root>
+      <Root>
+        <FilmTitle>{filmTitle}</FilmTitle>
+        <FilmVideo>
+          <iframe
+            src={filmUrl}
+            title="BBC three The American High School: OW"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            width="100%"
+          ></iframe>
+        </FilmVideo>
+        <>{renderPost(filmBlurb)}</>
+        {console.log(props.filmData)}
+      </Root>
     </>
   );
 };
