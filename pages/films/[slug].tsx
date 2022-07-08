@@ -1,11 +1,22 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { GetStaticProps } from "next";
 import MainLayout from "../../layouts/mainLayout";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import PageWithLayoutType from "../../types/pageWithLayout";
 import Header from "../../components/Header/Header";
 import { getAllFilmPageSlugs, getPostBySlug } from "../../utils/contentfulApi";
 import { renderPost } from "../../utils/RichTextRender";
+
+const FadeIn = keyframes`
+    0% {
+ /* margin-left: -50%; */
+ opacity: 0;
+    }
+    100% {
+      /* margin-left: 0%; */
+opacity: 1;
+    }
+`;
 
 const Root = styled.div`
   width: 100vw;
@@ -42,6 +53,25 @@ const PageContent = styled.div`
   }
 `;
 const PostWrapper: FC<any> = (props) => {
+  useEffect(() => {
+    const mySlice = document.querySelector("#animate-fade");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          // in the view
+          console.log(mySlice);
+          mySlice.classList.add("fade");
+          // observer.unobserve;
+
+          /// Need a way to add the fade effect to children
+        }
+      });
+    });
+
+    observer.observe(mySlice);
+  }, []);
+
   const { filmTitle, filmSlug, filmBlurb, filmUrl } = props.filmData;
   return (
     <>

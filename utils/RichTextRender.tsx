@@ -6,6 +6,9 @@ import styled from "styled-components";
 // INLINES.EMBEDDED_ENTRY (linked inline entries e.g. a reference to another blog post)
 // and BLOCKS.EMBEDDED_ASSET (linked assets e.g. images)
 
+const CenterAlign = styled.blockquote`
+  text-align: center;
+`;
 function renderOptions(links) {
   // create an asset map
   const assetMap = new Map();
@@ -48,7 +51,6 @@ function renderOptions(links) {
           index > 0 && (
             <>
               <br key={index} />
-              {/* <br key={index} /> */}
             </>
           ),
           textSegment,
@@ -80,7 +82,6 @@ function renderOptions(links) {
             </pre>
           );
         }
-
         if (entry.__typename === "VideoEmbed") {
           return (
             <iframe
@@ -102,6 +103,9 @@ function renderOptions(links) {
         // render the asset accordingly
         return <BlogImage src={asset.url} alt="My image alt text" />;
       },
+      [BLOCKS.QUOTE]: (node, children) => (
+        <CenterAlign id="animate-fade">{children}</CenterAlign>
+      ),
     },
   };
 }
