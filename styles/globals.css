@@ -33,7 +33,3 @@ code {
   justify-content: center;
   align-items: center;
 }
-
-iframe {
-  height: calc(100vh - 80px) !important;
-}

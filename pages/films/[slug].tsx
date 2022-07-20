@@ -6,6 +6,7 @@ import PageWithLayoutType from "../../types/pageWithLayout";
 import Header from "../../components/Header/Header";
 import { getAllFilmPageSlugs, getPostBySlug } from "../../utils/contentfulApi";
 import { renderPost } from "../../utils/RichTextRender";
+import { isTemplateExpression } from "typescript";
 
 const FadeIn = keyframes`
     0% {
@@ -19,10 +20,10 @@ opacity: 1;
 `;
 
 const Root = styled.div`
-  width: 100vw;
-
+  width: 85vw;
+  margin: auto;
   min-height: calc(100vh - 120px);
-  padding: 0px 64px;
+  margin-bottom: 128px;
 
   @media (min-width: 1280px) {
   }
@@ -39,6 +40,24 @@ const FilmTitle = styled.h1`
 `;
 const FilmVideo = styled.div`
   width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  @media (min-width: 767px) {
+    ::after {
+      padding-top: 56.25%;
+      display: block;
+      content: "";
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 
 const PageContent = styled.div`
@@ -52,6 +71,24 @@ const PageContent = styled.div`
     line-height: 24px;
   }
 `;
+
+const ThumbnailGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+`;
+
+const Thumbnail = styled.img`
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+
+  @media (min-width: 1280px) {
+    width: 33%;
+    position: relative;
+  }
+`;
+
 const PostWrapper: FC<any> = (props) => {
   useEffect(() => {
     const mySlice = document.querySelector("#animate-fade");
@@ -72,24 +109,31 @@ const PostWrapper: FC<any> = (props) => {
     observer.observe(mySlice);
   }, []);
 
-  const { filmTitle, filmSlug, filmBlurb, filmUrl } = props.filmData;
+  // const { filmTitle, filmSlug, filmBlurb, filmUrl } = props.filmData;
+  const { filmData } = props;
   return (
     <>
       <Header />
       <Root>
-        <FilmTitle>{filmTitle}</FilmTitle>
+        <FilmTitle>{filmData.filmTitle}</FilmTitle>
         <FilmVideo>
           <iframe
-            src={filmUrl}
+            src={filmData.filmUrl}
             title="BBC three The American High School: OW"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             width="100%"
+            height="100%"
           ></iframe>
         </FilmVideo>
-        <>{renderPost(filmBlurb)}</>
-        {console.log(props.filmData)}
+        <>{renderPost(filmData.filmBlurb)}</>
+        {console.log(filmData)}
+        <ThumbnailGrid>
+          {filmData.filmGridPictureCollection.items.map((i, idx) => {
+            return <Thumbnail key={idx} src={i.url} />;
+          })}
+        </ThumbnailGrid>
       </Root>
     </>
   );
@@ -105,7 +149,7 @@ export async function getStaticPaths() {
   const paths = filmPageSlugs.map((slug) => {
     return { params: { slug } };
   });
-  // console.log(paths);
+  console.log(paths);
   return {
     paths,
     fallback: false,

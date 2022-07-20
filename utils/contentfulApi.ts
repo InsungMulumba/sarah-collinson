@@ -170,9 +170,6 @@ export async function getPaginatedSlugs(page) {
  *
  */
 export async function getAllFilmPageSlugs() {
-  const queryLimit = 20;
-  const variables = { limit: queryLimit };
-
   const query = `
    {
         filmPageCollection(limit: 20) {
@@ -200,7 +197,7 @@ export async function getAllFilmPageSlugs() {
   const slugs = response.data?.filmPageCollection.items
     ? response.data?.filmPageCollection.items.map((item) => item.filmSlug)
     : [];
-
+  console.log(`Slugs returned: ${slugs}`);
   return slugs;
 
   // let page = 1;
@@ -260,6 +257,22 @@ export async function getPostBySlug(slug, options = defaultOptions) {
         filmSlug
         filmUrl
         filmTitle
+        filmGridPictureCollection {
+          items {
+            url
+            title
+            width
+            height
+            description 
+          }
+        }
+        filmMainPicture {
+          url
+          title
+          width
+          height
+          description 
+        }
         filmBlurb {    
             json
             links {
