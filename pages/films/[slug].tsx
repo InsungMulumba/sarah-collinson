@@ -6,7 +6,6 @@ import PageWithLayoutType from "../../types/pageWithLayout";
 import Header from "../../components/Header/Header";
 import { getAllFilmPageSlugs, getPostBySlug } from "../../utils/contentfulApi";
 import { renderPost } from "../../utils/RichTextRender";
-import { isTemplateExpression } from "typescript";
 
 const FadeIn = keyframes`
     0% {
