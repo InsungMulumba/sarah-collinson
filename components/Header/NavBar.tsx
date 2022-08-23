@@ -122,7 +122,8 @@ const NameTag = styled.div`
     margin-left: 50px;
   }
   @media (max-width: 1280px) {
-    font-size: 32px;
+    font-size: 28px;
+    margin-right: 0px;
   }
 `;
 
