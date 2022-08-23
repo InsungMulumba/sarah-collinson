@@ -26,11 +26,12 @@ const Root = styled.div`
   }
 `;
 
-const FilmTile = styled.div<{
+const FilmTile = styled.a<{
   picture: string;
 }>`
   flex: 0 0 100%; /* don't grow, don't shrink, width */
   height: 28vh;
+  text-decoration: none;
   @media (min-width: 600px) {
     flex: 0 0 100%; /* don't grow, don't shrink, width */
     height: 40vh;
@@ -96,7 +97,7 @@ const filmsIndex: FC<any> = (props) => {
       <Root>
         {films &&
           films.map((i, idx) => (
-            <FilmTile key={idx} picture={i.image}>
+            <FilmTile key={idx} picture={i.image} href={`films/${i.slug}`}>
               <FilmName className="name">{i.title}</FilmName>
             </FilmTile>
           ))}

@@ -138,7 +138,7 @@ const TitleTag = styled(NameTag)`
 
 const NavLinksContainerMobile = styled.div`
   position: fixed;
-  top: 80px;
+  top: 149px;
   left: 0;
   width: 100%;
   z-index: 90;
