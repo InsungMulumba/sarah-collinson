@@ -23,6 +23,8 @@ const Root = styled.div`
 
   @media (min-width: 1280px) {
     margin-top: 40px;
+
+    /* margin: 40px 60px 0px; */
   }
 `;
 
@@ -38,12 +40,13 @@ const FilmTile = styled.a<{
   }
 
   @media (min-width: 1280px) {
-    flex: 0.33 0 33%; /* don't grow, don't shrink, width */
+    flex: 0.4 0 40%; /* don't grow, don't shrink, width */
     /* max-height: 400px;
     height: 400px;
     min-height: 400px; */
-
-    height: 45vh;
+    margin: 20px 10px;
+    max-width: 40%;
+    /* height: 65vh; */
   }
 
   background: url(${(props) => props.picture}) no-repeat;
@@ -131,7 +134,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
       slug: "chinas-pop-idols",
     },
     {
-      title: "American high school",
+      title: "American High School",
       url: "https://www.youtube.com/watch?v=14BbagW3lbA",
       image: "/films/american-high-school.webp",
       slug: "american-high-school",

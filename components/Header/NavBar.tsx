@@ -215,7 +215,7 @@ const NavBar: FC = () => {
         <TagContainer>
           <NameTag>SARAH COLLINSON</NameTag>
           <TitleTag>
-            Documentary filmmaker and <br /> Executive producer
+            Documentary filmmaker and <br /> Executive Producer
           </TitleTag>
         </TagContainer>
         <NavLinksContainerDesktop>

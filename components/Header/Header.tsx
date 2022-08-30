@@ -9,7 +9,10 @@ const HeaderRoot = styled.div`
   flex-direction: column;
   background-color: white;
   width: 100%;
-  position: sticky;
+  @media (max-width: 767px) {
+    position: sticky;
+  }
+
   top: 0px;
   z-index: 1;
 `;

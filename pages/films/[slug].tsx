@@ -44,18 +44,11 @@ const FilmVideo = styled.div`
 
   @media (min-width: 767px) {
     ::after {
-      padding-top: 56.25%;
       display: block;
       content: "";
     }
 
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+    margin-bottom: 36px;
   }
 `;
 
@@ -115,8 +108,14 @@ const PostWrapper: FC<any> = (props) => {
       <Header />
       <Root>
         <FilmTitle>{filmData.filmTitle}</FilmTitle>
+        {console.log(filmData)}
         <FilmVideo>
-          <iframe
+          <video controls width="100%">
+            <source src={filmData.filmWebmVideo.url} type="video/webm" />
+            <source src={filmData.filmMp4Video.url} type="video/mp4" />
+            Sorry, your browser doesn't support videos.
+          </video>
+          {/* <iframe
             src={filmData.filmUrl}
             title="BBC three The American High School: OW"
             frameBorder="0"
@@ -124,7 +123,7 @@ const PostWrapper: FC<any> = (props) => {
             allowFullScreen
             width="100%"
             height="100%"
-          ></iframe>
+          ></iframe> */}
         </FilmVideo>
         <>{renderPost(filmData.filmBlurb)}</>
         {console.log(filmData)}
