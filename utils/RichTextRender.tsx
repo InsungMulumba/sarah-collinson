@@ -9,6 +9,10 @@ import styled from "styled-components";
 const CenterAlign = styled.blockquote`
   text-align: center;
 `;
+const BiggerFont = styled.p`
+  font-size: 20px;
+  text-align: center;
+`;
 function renderOptions(links) {
   // create an asset map
   const assetMap = new Map();
@@ -105,6 +109,9 @@ function renderOptions(links) {
       },
       [BLOCKS.QUOTE]: (node, children) => (
         <CenterAlign id="animate-fade">{children}</CenterAlign>
+      ),
+      [BLOCKS.HEADING_6]: (node, children) => (
+        <BiggerFont>{children}</BiggerFont>
       ),
     },
   };

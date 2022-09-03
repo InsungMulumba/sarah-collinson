@@ -287,6 +287,21 @@ export async function getPostBySlug(slug, options = defaultOptions) {
           height
           description 
         }
+        filmMp4SecondVideo {
+          url
+          title
+          width
+          height
+          description 
+        }
+        filmWebmSecondVideo {
+          url
+          title
+          width
+          height
+          description 
+        }
+
         filmBlurb {    
             json
             links {

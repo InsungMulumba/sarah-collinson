@@ -37,7 +37,7 @@ const FilmTitle = styled.h1`
   font-weight: 500;
   text-align: center;
 `;
-const FilmVideo = styled.div`
+const FilmVideoContainer = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -47,9 +47,11 @@ const FilmVideo = styled.div`
       display: block;
       content: "";
     }
-
-    margin-bottom: 36px;
   }
+`;
+
+const FilmVideo = styled.video`
+  margin-bottom: 24px;
 `;
 
 const PageContent = styled.div`
@@ -89,7 +91,7 @@ const PostWrapper: FC<any> = (props) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
           // in the view
-          console.log(mySlice);
+
           mySlice.classList.add("fade");
           // observer.unobserve;
 
@@ -101,37 +103,35 @@ const PostWrapper: FC<any> = (props) => {
     observer.observe(mySlice);
   }, []);
 
-  // const { filmTitle, filmSlug, filmBlurb, filmUrl } = props.filmData;
   const { filmData } = props;
   return (
     <>
       <Header />
       <Root>
-        <FilmTitle>{filmData.filmTitle}</FilmTitle>
-        {console.log(filmData)}
-        <FilmVideo>
+        {console.log(filmData.filmBlurb)}
+        <FilmVideoContainer>
+          <FilmVideo controls width="100%">
+            <source src={filmData.filmWebmVideo?.url} type="video/webm" />
+            <source src={filmData.filmMp4Video?.url} type="video/mp4" />
+            Sorry, your browser doesn't support videos.
+          </FilmVideo>
+          <FilmTitle>{filmData.filmTitle}</FilmTitle>
+        </FilmVideoContainer>
+        <>{renderPost(filmData.filmBlurb)}</>
+        {filmData.filmGridPictureCollection?.items && (
+          <ThumbnailGrid>
+            {filmData.filmGridPictureCollection.items.map((i, idx) => {
+              return <Thumbnail key={idx} src={i.url} />;
+            })}
+          </ThumbnailGrid>
+        )}
+        {filmData.filmMp4SecondVideo?.url && (
           <video controls width="100%">
-            <source src={filmData.filmWebmVideo.url} type="video/webm" />
-            <source src={filmData.filmMp4Video.url} type="video/mp4" />
+            <source src={filmData.filmWebmSecondVideo?.url} type="video/webm" />
+            <source src={filmData.filmMp4SecondVideo?.url} type="video/mp4" />
             Sorry, your browser doesn't support videos.
           </video>
-          {/* <iframe
-            src={filmData.filmUrl}
-            title="BBC three The American High School: OW"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            width="100%"
-            height="100%"
-          ></iframe> */}
-        </FilmVideo>
-        <>{renderPost(filmData.filmBlurb)}</>
-        {console.log(filmData)}
-        <ThumbnailGrid>
-          {filmData.filmGridPictureCollection.items.map((i, idx) => {
-            return <Thumbnail key={idx} src={i.url} />;
-          })}
-        </ThumbnailGrid>
+        )}
       </Root>
     </>
   );
@@ -174,16 +174,3 @@ export async function getStaticProps({ params, preview = false }) {
     },
   };
 }
-
-// export async function getStaticPaths() {
-//   const filmPageSlugs = [];
-
-//   const paths = filmPageSlugs.map((slug) => {
-//     return { params: { slug } };
-//   });
-
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// }
