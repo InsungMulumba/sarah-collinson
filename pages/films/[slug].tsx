@@ -87,20 +87,22 @@ const PostWrapper: FC<any> = (props) => {
   useEffect(() => {
     const mySlice = document.querySelector("#animate-fade");
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
-          // in the view
+    if (mySlice) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0) {
+            // in the view
 
-          mySlice.classList.add("fade");
-          // observer.unobserve;
+            mySlice.classList.add("fade");
+            // observer.unobserve;
 
-          /// Need a way to add the fade effect to children
-        }
+            /// Need a way to add the fade effect to children
+          }
+        });
       });
-    });
 
-    observer.observe(mySlice);
+      observer.observe(mySlice);
+    }
   }, []);
 
   const { filmData } = props;
