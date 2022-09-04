@@ -113,6 +113,7 @@ const PostWrapper: FC<any> = (props) => {
           <FilmVideo controls width="100%">
             <source src={filmData.filmWebmVideo?.url} type="video/webm" />
             <source src={filmData.filmMp4Video?.url} type="video/mp4" />
+            <source src={`/videos/${filmData.filmSlug}.mp4`} type="video/mp4" />
             Sorry, your browser doesn't support videos.
           </FilmVideo>
           <FilmTitle>{filmData.filmTitle}</FilmTitle>
