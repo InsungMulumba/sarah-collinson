@@ -41,6 +41,7 @@ const FilmVideoContainer = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
+  margin-top: 40px;
 
   @media (min-width: 767px) {
     ::after {
@@ -70,6 +71,7 @@ const ThumbnailGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
+  margin-top: 40px;
 `;
 
 const Thumbnail = styled.img`
@@ -112,12 +114,30 @@ const PostWrapper: FC<any> = (props) => {
       <Root>
         {console.log(filmData.filmBlurb)}
         <FilmVideoContainer>
-          <FilmVideo controls width="100%">
-            <source src={filmData.filmWebmVideo?.url} type="video/webm" />
-            <source src={filmData.filmMp4Video?.url} type="video/mp4" />
-            <source src={`/videos/${filmData.filmSlug}.mp4`} type="video/mp4" />
-            Sorry, your browser doesn't support videos.
-          </FilmVideo>
+          {(filmData.filmWebmVideo?.url || filmData.filmMp4Video?.url) && (
+            <FilmVideo controls width="100%">
+              <source src={filmData.filmWebmVideo?.url} type="video/webm" />
+              <source src={filmData.filmMp4Video?.url} type="video/mp4" />
+              <source
+                src={`/videos/${filmData.filmSlug}.mp4`}
+                type="video/mp4"
+              />
+              Sorry, your browser doesn't support videos.
+            </FilmVideo>
+          )}
+
+          {filmData.filmUrl && (
+            <iframe
+              src={filmData.filmUrl}
+              title={filmData.Title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              width="100%"
+              height="100%"
+            ></iframe>
+          )}
+
           <FilmTitle>{filmData.filmTitle}</FilmTitle>
         </FilmVideoContainer>
         <>{renderPost(filmData.filmBlurb)}</>
