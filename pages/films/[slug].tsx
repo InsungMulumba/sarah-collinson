@@ -55,6 +55,10 @@ const FilmVideo = styled.video`
   margin-bottom: 24px;
 `;
 
+const FilmSecondVideo = styled.video`
+  margin-top: 40px;
+`;
+
 const PageContent = styled.div`
   @media (min-width: 1280px) {
     width: 80%;
@@ -149,11 +153,11 @@ const PostWrapper: FC<any> = (props) => {
           </ThumbnailGrid>
         )}
         {filmData.filmMp4SecondVideo?.url && (
-          <video controls width="100%">
+          <FilmSecondVideo controls width="100%">
             <source src={filmData.filmWebmSecondVideo?.url} type="video/webm" />
             <source src={filmData.filmMp4SecondVideo?.url} type="video/mp4" />
             Sorry, your browser doesn't support videos.
-          </video>
+          </FilmSecondVideo>
         )}
       </Root>
     </>
