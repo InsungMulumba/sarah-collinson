@@ -39,7 +39,7 @@ const FilmTile = styled.a<{
     height: 40vh;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 767px) {
     flex: 0.4 0 40%; /* don't grow, don't shrink, width */
 
     margin: 20px 10px;
@@ -116,55 +116,55 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
     {
       title: "Fearless: The women fighting Putin",
       url: "https://vimeo.com/646064087",
-      image: "/films/the-women-fighting-putin.webp",
+      image: "/films/jpg/the-women-fighting-putin.jpg",
       slug: "fearless-women-fighting-putin",
     },
     {
       title: "North Korea: Life inside the secret state",
       url: "https://www.youtube.com/watch?v=en6NMBEDj1c",
-      image: "/films/life-inside-secret-state.webp",
+      image: "/films/jpg/life-inside-secret-state.jpg",
       slug: "life-inside-secret-state",
     },
     {
       title: "China’s pop idols",
       url: "https://www.youtube.com/watch?v=14BbagW3lbA",
-      image: "/films/chinas-pop-idols.webp",
+      image: "/films/jpg/chinas-pop-idols.jpg",
       slug: "chinas-pop-idols",
     },
     {
       title: "American High School",
       url: "https://www.youtube.com/watch?v=14BbagW3lbA",
-      image: "/films/american-high-school.webp",
+      image: "/films/jpg/american-high-school.jpg",
       slug: "american-high-school",
     },
     {
       title: "From Russia with cash",
       url: "https://www.netflix.com/title/81574288",
-      image: "/films/from-russia-with-cash.webp",
+      image: "/films/jpg/from-russia-with-cash.jpg",
       slug: "from-russia-with-cash",
     },
     {
       title: "America’s legacy of lynching",
       url: "https://www.youtube.com/watch?v=mYYDgYWc3lE",
-      image: "/films/america-lynching.webp",
+      image: "/films/jpg/america-lynching.jpg",
       slug: "americas-legacy-of-lynching",
     },
     {
       title: "Joe Biden wins: what next for America? Q&A",
       url: "https://www.youtube.com/watch?v=XdD0HT4X_s4",
-      image: "/films/biden-next.webp",
+      image: "/films/jpg/biden-next.jpg",
       slug: "whats-next-for-america",
     },
     {
       title: "Vaping: what people are getting wrong",
       url: "https://www.youtube.com/watch?v=O4_l-klxqCQ&t=9s",
-      image: "/films/vaping-wrong.webp",
+      image: "/films/jpg/vaping-wrong.jpg",
       slug: "vaping-what-people-are-getting-wrong",
     },
     {
       title: "How America politicised abortion",
       url: "https://www.youtube.com/watch?v=jerdBX3JeOk&t=101s",
-      image: "/films/abortion-america.webp",
+      image: "/films/jpg/abortion-america.jpg",
       slug: "how-america-politicised-abortion",
     },
   ];

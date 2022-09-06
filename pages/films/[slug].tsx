@@ -130,7 +130,9 @@ const PostWrapper: FC<any> = (props) => {
       <Root>
         {console.log(filmData.filmBlurb)}
 
-        {(filmData.filmWebmVideo?.url || filmData.filmMp4Video?.url) && (
+        {(filmData.filmWebmVideo?.url ||
+          filmData.filmMp4Video?.url ||
+          !filmData.filmUrl) && (
           <FilmVideoContainer>
             <FilmVideo controls width="100%">
               <source src={filmData.filmWebmVideo?.url} type="video/webm" />
