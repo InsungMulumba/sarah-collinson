@@ -129,7 +129,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
       title: "China’s pop idols",
       url: "https://www.youtube.com/watch?v=14BbagW3lbA",
       image: "/films/jpg/chinas-pop-idols.jpg",
-      slug: "chinas-pop-idols",
+      slug: "china-pop-idols",
     },
     {
       title: "American High School",
