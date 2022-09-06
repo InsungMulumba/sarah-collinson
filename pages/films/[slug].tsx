@@ -37,17 +37,29 @@ const FilmTitle = styled.h1`
   font-weight: 500;
   text-align: center;
 `;
+
 const FilmVideoContainer = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
   margin-top: 40px;
+`;
 
+const FilmVideoIframeContainer = styled(FilmVideoContainer)`
   @media (min-width: 767px) {
     ::after {
+      padding-top: 56.25%;
       display: block;
       content: "";
     }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80%;
+    }
+    margin-bottom: -80px;
   }
 `;
 
@@ -117,8 +129,9 @@ const PostWrapper: FC<any> = (props) => {
       <Header />
       <Root>
         {console.log(filmData.filmBlurb)}
-        <FilmVideoContainer>
-          {(filmData.filmWebmVideo?.url || filmData.filmMp4Video?.url) && (
+
+        {(filmData.filmWebmVideo?.url || filmData.filmMp4Video?.url) && (
+          <FilmVideoContainer>
             <FilmVideo controls width="100%">
               <source src={filmData.filmWebmVideo?.url} type="video/webm" />
               <source src={filmData.filmMp4Video?.url} type="video/mp4" />
@@ -128,9 +141,12 @@ const PostWrapper: FC<any> = (props) => {
               />
               Sorry, your browser doesn't support videos.
             </FilmVideo>
-          )}
+            <FilmTitle>{filmData.filmTitle}</FilmTitle>
+          </FilmVideoContainer>
+        )}
 
-          {filmData.filmUrl && (
+        {filmData.filmUrl && (
+          <FilmVideoIframeContainer>
             <iframe
               src={filmData.filmUrl}
               title={filmData.Title}
@@ -138,14 +154,14 @@ const PostWrapper: FC<any> = (props) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               width="100%"
-              height="100%"
             ></iframe>
-          )}
+            <FilmTitle>{filmData.filmTitle}</FilmTitle>
+          </FilmVideoIframeContainer>
+        )}
 
-          <FilmTitle>{filmData.filmTitle}</FilmTitle>
-        </FilmVideoContainer>
         <>{renderPost(filmData.filmBlurb)}</>
-        {filmData.filmGridPictureCollection?.items && (
+        {console.log(filmData.filmGridPictureCollection)}
+        {filmData.filmGridPictureCollection?.items.length !== 0 && (
           <ThumbnailGrid>
             {filmData.filmGridPictureCollection.items.map((i, idx) => {
               return <Thumbnail key={idx} src={i.url} />;

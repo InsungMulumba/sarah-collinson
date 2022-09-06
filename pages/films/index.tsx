@@ -41,9 +41,7 @@ const FilmTile = styled.a<{
 
   @media (min-width: 1280px) {
     flex: 0.4 0 40%; /* don't grow, don't shrink, width */
-    /* max-height: 400px;
-    height: 400px;
-    min-height: 400px; */
+
     margin: 20px 10px;
     max-width: 40%;
     /* height: 65vh; */
