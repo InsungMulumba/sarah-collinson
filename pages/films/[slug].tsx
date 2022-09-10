@@ -34,7 +34,7 @@ const FilmTitle = styled.h1`
     font-size: 38px;
   }
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   text-align: center;
 `;
 

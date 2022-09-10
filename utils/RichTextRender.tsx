@@ -7,11 +7,10 @@ import styled from "styled-components";
 // and BLOCKS.EMBEDDED_ASSET (linked assets e.g. images)
 
 const CenterAlign = styled.blockquote`
-  text-align: center;
+  margin: 0px;
 `;
 const BiggerFont = styled.p`
   font-size: 20px;
-  text-align: center;
 `;
 function renderOptions(links) {
   // create an asset map

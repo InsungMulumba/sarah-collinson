@@ -15,16 +15,16 @@ type filmsCollection = {
 
 const Root = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: calc(100vh - 191px);
   width: 100%;
   flex-wrap: wrap;
   font-size: 40px;
 
   @media (min-width: 1280px) {
-    margin-top: 40px;
+    //margin-top: 40px;
 
-    /* margin: 40px 60px 0px; */
+    margin: 40px 10% 0px;
   }
 `;
 
@@ -39,7 +39,7 @@ const FilmTile = styled.a<{
     height: 40vh;
   }
 
-  @media (min-width: 767px) {
+  @media (min-width: 1280px) {
     flex: 0.4 0 40%; /* don't grow, don't shrink, width */
 
     margin: 20px 10px;
