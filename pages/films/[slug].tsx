@@ -59,7 +59,8 @@ const FilmVideoIframeContainer = styled(FilmVideoContainer)`
       width: 100%;
       height: 80%;
     }
-    margin-bottom: -80px;
+    display: flex;
+    flex-direction: column-reverse;
   }
 `;
 
