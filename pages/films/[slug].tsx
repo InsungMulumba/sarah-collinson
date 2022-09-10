@@ -129,8 +129,6 @@ const PostWrapper: FC<any> = (props) => {
     <>
       <Header />
       <Root>
-        {console.log(filmData.filmBlurb)}
-
         {(filmData.filmWebmVideo?.url ||
           filmData.filmMp4Video?.url ||
           !filmData.filmUrl) && (

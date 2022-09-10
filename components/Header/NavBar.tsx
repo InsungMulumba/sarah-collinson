@@ -207,7 +207,10 @@ const NavBar: FC = () => {
       ) : null}
 
       <NavigationBarDesktop>
-        <MenuToggle onClick={() => setShowBurgerMenu(!toggleBurgerMenu)}>
+        <MenuToggle
+          aria-label="Menu Toggle Button"
+          onClick={() => setShowBurgerMenu(!toggleBurgerMenu)}
+        >
           <BurgerMenu />
           <BurgerMenu />
           <BurgerMenu />
