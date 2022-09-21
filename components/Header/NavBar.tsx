@@ -116,24 +116,35 @@ const NameTag = styled.div`
   font-family: "Roboto", sans-serif;
   font-size: 50px;
   text-decoration: none;
-
   margin: auto 20px;
   @media (min-width: 1280px) {
     margin-left: 50px;
+    letter-spacing: 3px;
   }
   @media (max-width: 1280px) {
-    font-size: 28px;
+    font-size: 24px;
     margin-right: 0px;
+    letter-spacing: 1.2px;
   }
 `;
 
 const TitleTag = styled(NameTag)`
-  font-size: 24px;
+  font-size: 34px;
   color: grey;
   text-decoration: none;
   margin-top: 16px;
+  span {
+    letter-spacing: 1.2px;
+  }
   @media (max-width: 1280px) {
     font-size: 16px;
+    letter-spacing: 1.1px;
+  }
+  @media (min-width: 1280px) {
+    letter-spacing: 2px;
+    span {
+      letter-spacing: 5px;
+    }
   }
 `;
 
@@ -218,7 +229,7 @@ const NavBar: FC = () => {
         <TagContainer>
           <NameTag>SARAH COLLINSON</NameTag>
           <TitleTag>
-            Documentary filmmaker and <br /> Executive Producer
+            DOCUMENTARY FILMMAKER <br /> <span> & EXECUTIVE PRODUCER</span>
           </TitleTag>
         </TagContainer>
         <NavLinksContainerDesktop>

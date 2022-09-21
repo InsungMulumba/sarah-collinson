@@ -141,9 +141,9 @@ const Home: FC = () => {
               <TextContainer>
                 <TextBlock>
                   Sarah Collinson is a BAFTA-winning and Emmy-nominated
-                  Executive Producer &amp; Story Editor at Economist Films, the
-                  video production arm of the global current-affairs newspaper,
-                  The Economist.
+                  documentary filmmaker and Executive Producer &amp; Story
+                  Editor at Economist Films, the video production arm of the
+                  global current-affairs newspaper, The Economist.
                   <br />
                   <br /> Sarah started her career as an undercover reporter,
                   before being selected for Channel 4’s prestigious
