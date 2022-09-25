@@ -16,7 +16,7 @@ const Root = styled.div`
 const Text = styled.p`
   font-family: "Roboto", sans-serif;
   font-size: 20px;
-  margin-top: 80px;
+  margin-top: 40px;
   width: 40%;
   @media (max-width: 767px) {
     width: 80%;
