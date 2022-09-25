@@ -104,19 +104,21 @@ const SlideInMobileMenu = keyframes`
       /* opacity: 100%; */
     }
 `;
-const TagContainer = styled.div`
+const TagContainer = styled.a`
   display: flex;
   height: 100%;
   display: flex;
   align-items: start;
   flex-direction: column;
   padding-bottom: 24px;
+  text-decoration: none;
 `;
 const NameTag = styled.div`
   font-family: "Roboto", sans-serif;
   font-size: 50px;
   text-decoration: none;
   margin: auto 20px;
+  color: black;
   @media (min-width: 1280px) {
     margin-left: 50px;
     letter-spacing: 3px;
@@ -150,7 +152,7 @@ const TitleTag = styled(NameTag)`
 
 const NavLinksContainerMobile = styled.div`
   position: fixed;
-  top: 145px;
+  top: 140px;
   left: 0;
   width: 100%;
   z-index: 90;
@@ -226,7 +228,7 @@ const NavBar: FC = () => {
           <BurgerMenu />
           <BurgerMenu />
         </MenuToggle>
-        <TagContainer>
+        <TagContainer href="/">
           <NameTag>SARAH COLLINSON</NameTag>
           <TitleTag>
             DOCUMENTARY FILMMAKER <br /> <span> & EXECUTIVE PRODUCER</span>
