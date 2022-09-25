@@ -237,6 +237,7 @@ const NavBar: FC = () => {
         <NavLinksContainerDesktop>
           <NavLinksDesktop href="/">Home </NavLinksDesktop>
           <NavLinksDesktop href="/films">Films </NavLinksDesktop>
+          <NavLinksDesktop href="/contact">Contact </NavLinksDesktop>
         </NavLinksContainerDesktop>
       </NavigationBarDesktop>
       {/* <TagLine> The Grief Gang Podcast</TagLine> */}
