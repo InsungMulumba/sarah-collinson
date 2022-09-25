@@ -213,7 +213,7 @@ const NavBar: FC = () => {
         >
           <NavLinksMobile href="/">Home </NavLinksMobile>
           <NavLinksMobile href="/films">Films </NavLinksMobile>
-          {/* <NavLinksMobile href="/contact">Contact</NavLinksMobile> */}
+          <NavLinksMobile href="/get-in-touch">Get in Touch</NavLinksMobile>
         </NavLinksContainerMobile>
       ) : null}
 

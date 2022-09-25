@@ -28,12 +28,9 @@ const SocialMediaIcon = styled.img`
   }
 `;
 
-const platforms = ["gmail", "Twitter"];
+const platforms = ["Twitter"];
 
-const platformLinks = [
-  "mailto:sfcollinson@gmail.com",
-  "https://twitter.com/sfcollinson",
-];
+const platformLinks = ["https://twitter.com/sfcollinson"];
 
 const SMContainer: FC = () => {
   return (

@@ -105,6 +105,20 @@ const TextBlock = styled.div`
   margin: 0px 16px;
 `;
 
+const ContactButton = styled.a`
+  text-decoration: none;
+  border: 1px solid #48cccc;
+  color: #48cccc;
+  padding: 25px 45px;
+  display: flex;
+  width: fit-content;
+  margin: 40px auto;
+  :hover {
+    background-color: #48cccc;
+    color: white;
+  }
+`;
+
 const Home: FC = () => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -189,7 +203,7 @@ const Home: FC = () => {
                   behaviour around the world through powerful personal stories,
                   intimately told.
                 </TextBlock>
-                <SocialMedia />
+                <ContactButton href="/get-in-touch">GET IN TOUCH</ContactButton>
               </TextContainer>
             </PageContent>
           </>
