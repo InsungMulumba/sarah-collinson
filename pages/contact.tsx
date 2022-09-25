@@ -20,6 +20,7 @@ const Text = styled.p`
   width: 40%;
   @media (max-width: 767px) {
     width: 80%;
+    font-size: 16px;
   }
 `;
 

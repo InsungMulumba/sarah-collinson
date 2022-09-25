@@ -145,7 +145,7 @@ const TitleTag = styled(NameTag)`
   @media (min-width: 1280px) {
     letter-spacing: 2px;
     span {
-      letter-spacing: 5px;
+      letter-spacing: 3px;
     }
   }
 `;
@@ -215,7 +215,7 @@ const NavBar: FC = () => {
         >
           <NavLinksMobile href="/">Home </NavLinksMobile>
           <NavLinksMobile href="/films">Films </NavLinksMobile>
-          <NavLinksMobile href="/get-in-touch">Get in Touch</NavLinksMobile>
+          <NavLinksMobile href="/contact">Contact</NavLinksMobile>
         </NavLinksContainerMobile>
       ) : null}
 
@@ -231,7 +231,7 @@ const NavBar: FC = () => {
         <TagContainer href="/">
           <NameTag>SARAH COLLINSON</NameTag>
           <TitleTag>
-            DOCUMENTARY FILMMAKER <br /> <span> & EXECUTIVE PRODUCER</span>
+            DOCUMENTARY FILMMAKER <br /> <span> AND EXECUTIVE PRODUCER</span>
           </TitleTag>
         </TagContainer>
         <NavLinksContainerDesktop>

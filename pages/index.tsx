@@ -203,7 +203,7 @@ const Home: FC = () => {
                   behaviour around the world through powerful personal stories,
                   intimately told.
                 </TextBlock>
-                <ContactButton href="/get-in-touch">GET IN TOUCH</ContactButton>
+                <ContactButton href="/contact">GET IN TOUCH</ContactButton>
               </TextContainer>
             </PageContent>
           </>
