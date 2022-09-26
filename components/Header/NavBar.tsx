@@ -121,31 +121,31 @@ const NameTag = styled.div`
   color: black;
   @media (min-width: 1280px) {
     margin-left: 50px;
-    letter-spacing: 3px;
+    letter-spacing: 3.2px;
   }
   @media (max-width: 1280px) {
     font-size: 24px;
     margin-right: 0px;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.3px;
   }
 `;
 
 const TitleTag = styled(NameTag)`
-  font-size: 34px;
+  font-size: 28px;
   color: grey;
   text-decoration: none;
   margin-top: 16px;
   span {
-    letter-spacing: 1.2px;
+    letter-spacing: 1.3px;
   }
   @media (max-width: 1280px) {
     font-size: 16px;
     letter-spacing: 1.1px;
   }
   @media (min-width: 1280px) {
-    letter-spacing: 2px;
+    letter-spacing: 6.2px;
     span {
-      letter-spacing: 2.5px;
+      letter-spacing: 6.3px;
     }
   }
 `;
