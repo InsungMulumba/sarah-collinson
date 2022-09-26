@@ -145,7 +145,7 @@ const TitleTag = styled(NameTag)`
   @media (min-width: 1280px) {
     letter-spacing: 2px;
     span {
-      letter-spacing: 3px;
+      letter-spacing: 2.5px;
     }
   }
 `;
