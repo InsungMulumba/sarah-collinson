@@ -144,7 +144,7 @@ const PostWrapper: FC<any> = (props) => {
           filmData.filmMainPicture?.url ||
           !filmData.filmUrl) && (
           <FilmVideoContainer>
-            {filmData.filmMp4Video !== null && (
+            {filmData.filmMainPicture === null && (
               <FilmVideo controls width="100%">
                 <source src={filmData.filmWebmVideo?.url} type="video/webm" />
                 <source src={filmData.filmMp4Video?.url} type="video/mp4" />
