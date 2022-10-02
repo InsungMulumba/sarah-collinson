@@ -65,8 +65,12 @@ const FilmVideoIframeContainer = styled(FilmVideoContainer)`
 `;
 
 const FilmPicture = styled.img`
+  margin: 0px auto 24px;
   width: 100%;
-  margin-bottom: 24px;
+  display: block;
+  @media (min-width: 1280px) {
+    width: 50%;
+  }
 `;
 
 const FilmVideo = styled.video`
@@ -140,7 +144,7 @@ const PostWrapper: FC<any> = (props) => {
           filmData.filmMainPicture?.url ||
           !filmData.filmUrl) && (
           <FilmVideoContainer>
-            {filmData.filmMainPicture?.url === null && (
+            {filmData.filmMp4Video !== null && (
               <FilmVideo controls width="100%">
                 <source src={filmData.filmWebmVideo?.url} type="video/webm" />
                 <source src={filmData.filmMp4Video?.url} type="video/mp4" />
@@ -151,9 +155,11 @@ const PostWrapper: FC<any> = (props) => {
                 Sorry, your browser doesn't support videos.
               </FilmVideo>
             )}
-            {filmData.filmMainPicture?.url !== null && (
-              <FilmPicture src={filmData.filmMainPicture.url} />
-            )}
+            {filmData.filmMainPicture !== null &&
+              filmData.filmMp4Video === null &&
+              filmData.filmWebmVideo === null && (
+                <FilmPicture src={filmData.filmMainPicture?.url} />
+              )}
             <FilmTitle>{filmData.filmTitle}</FilmTitle>
           </FilmVideoContainer>
         )}
