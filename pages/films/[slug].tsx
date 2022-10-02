@@ -140,7 +140,7 @@ const PostWrapper: FC<any> = (props) => {
           filmData.filmMainPicture?.url ||
           !filmData.filmUrl) && (
           <FilmVideoContainer>
-            {!filmData.mainPicture?.url && (
+            {filmData.filmMainPicture?.url === null && (
               <FilmVideo controls width="100%">
                 <source src={filmData.filmWebmVideo?.url} type="video/webm" />
                 <source src={filmData.filmMp4Video?.url} type="video/mp4" />
@@ -151,8 +151,8 @@ const PostWrapper: FC<any> = (props) => {
                 Sorry, your browser doesn't support videos.
               </FilmVideo>
             )}
-            {filmData.mainPicture?.url && (
-              <FilmPicture src={filmData.mainPicture.url} />
+            {filmData.filmMainPicture?.url !== null && (
+              <FilmPicture src={filmData.filmMainPicture.url} />
             )}
             <FilmTitle>{filmData.filmTitle}</FilmTitle>
           </FilmVideoContainer>
