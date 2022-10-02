@@ -64,6 +64,11 @@ const FilmVideoIframeContainer = styled(FilmVideoContainer)`
   }
 `;
 
+const FilmPicture = styled.img`
+  width: 100%;
+  margin-bottom: 24px;
+`;
+
 const FilmVideo = styled.video`
   margin-bottom: 24px;
 `;
@@ -129,19 +134,26 @@ const PostWrapper: FC<any> = (props) => {
     <>
       <Header />
       <Root>
+        {console.log(filmData)}
         {(filmData.filmWebmVideo?.url ||
           filmData.filmMp4Video?.url ||
+          filmData.filmMainPicture?.url ||
           !filmData.filmUrl) && (
           <FilmVideoContainer>
-            <FilmVideo controls width="100%">
-              <source src={filmData.filmWebmVideo?.url} type="video/webm" />
-              <source src={filmData.filmMp4Video?.url} type="video/mp4" />
-              <source
-                src={`/videos/${filmData.filmSlug}.mp4`}
-                type="video/mp4"
-              />
-              Sorry, your browser doesn't support videos.
-            </FilmVideo>
+            {!filmData.mainPicture?.url && (
+              <FilmVideo controls width="100%">
+                <source src={filmData.filmWebmVideo?.url} type="video/webm" />
+                <source src={filmData.filmMp4Video?.url} type="video/mp4" />
+                <source
+                  src={`/videos/${filmData.filmSlug}.mp4`}
+                  type="video/mp4"
+                />
+                Sorry, your browser doesn't support videos.
+              </FilmVideo>
+            )}
+            {filmData.mainPicture?.url && (
+              <FilmPicture src={filmData.mainPicture.url} />
+            )}
             <FilmTitle>{filmData.filmTitle}</FilmTitle>
           </FilmVideoContainer>
         )}
@@ -159,9 +171,8 @@ const PostWrapper: FC<any> = (props) => {
             <FilmTitle>{filmData.filmTitle}</FilmTitle>
           </FilmVideoIframeContainer>
         )}
-
         <>{renderPost(filmData.filmBlurb)}</>
-        {console.log(filmData.filmGridPictureCollection)}
+
         {filmData.filmGridPictureCollection?.items.length !== 0 && (
           <ThumbnailGrid>
             {filmData.filmGridPictureCollection.items.map((i, idx) => {
