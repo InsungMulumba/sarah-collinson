@@ -157,7 +157,8 @@ const Home: FC = () => {
                   Sarah Collinson is a BAFTA-winning and Emmy-nominated Director
                   and Executive Producer at Economist Films, the video
                   production arm of the global current-affairs newspaper, The
-                  Economist.
+                  Economist. She was awarded Best Documentary Director by the
+                  Royal Television Society in 2022.
                   <br />
                   <br /> Sarah started her career as an undercover reporter,
                   before being selected for Channel 4’s prestigious
