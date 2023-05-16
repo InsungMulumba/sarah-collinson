@@ -9,7 +9,7 @@ A portfolio website for award winning filmmaker Sarah Collinson
 - NextJs
 - GraphQL
 - Contentful
-- Styled Components#
+- Styled Components
 - Netlify
 
 ## How to view
