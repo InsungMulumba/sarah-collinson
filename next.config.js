@@ -14,8 +14,9 @@
 //   },
 // };
 module.exports = {
-  // Target must be serverless
-  target: "serverless",
+  compiler: {
+    styledComponents: true,
+  },
   async redirects() {
     return [
       {
